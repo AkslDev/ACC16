@@ -35,10 +35,12 @@ if (isset($_SESSION['infos_user']['token'])) {
         			</div>
         		</form>
         	</div>
-        
 
     	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
      	<script type="text/javascript" src="js/materialize.js"></script>
      	<script type="text/javascript" src="js/main.js"></script>
+      <?php if (isset($_GET['erreur'])) {
+        echo "<script>Materialize.toast('Mot de passe incorrect !', 4000);</script>";
+      } ?>
 </body>
 </html>

@@ -32,16 +32,19 @@ if (!isset($_SESSION['infos_user']['token'])) {
 			    </div>
 		    </li>
 		    <li>
-		    	<a href="#!"><i class="material-icons">burst_mode</i>Photos</a>
+		    	<a href="#!" id="btn_home" ><i class="material-icons">home</i>Accueil</a>
 	    	</li>
 		    <li>
-		    	<a href="#!"><i class="material-icons">dashboard</i>Produits</a>
+		    	<a href="#!" id="btn_photos" ><i class="material-icons">burst_mode</i>Photos</a>
 	    	</li>
 		    <li>
-		    	<a href="#!"><i class="material-icons">shopping_basket</i>Commandes</a>
+		    	<a href="#!" id="btn_produits" ><i class="material-icons">dashboard</i>Produits</a>
 	    	</li>
 		    <li>
-		    	<a class="waves-effect" href="#!"><i class="material-icons">supervisor_account</i>Utilisateurs</a>
+		    	<a href="#!" id="btn_commandes" ><i class="material-icons">shopping_basket</i>Commandes</a>
+	    	</li>
+		    <li>
+		    	<a class="waves-effect" href="#!" id="btn_users" ><i class="material-icons">supervisor_account</i>Utilisateurs</a>
 	    	</li>
 	    	<li>
 	    		<a class="waves-effect waves-light btn-large deco" href="deconnexion.php">déconnexion</a>
@@ -70,6 +73,19 @@ if (!isset($_SESSION['infos_user']['token'])) {
   				<?php
 		  			}
 		  		 ?>
+		  	</section>
+
+		  	<section id="photos" style="display: none;">
+		  		<h3>Photos</h3>
+		  	</section>
+		  	<section id="produits" style="display: none;">
+		  		<h3>Produits</h3>
+		  	</section>
+		  	<section id="commandes" style="display: none;">
+		  		<h3>Commandes</h3>
+		  	</section>
+		  	<section id="users" style="display: none;">
+		  		<h3>Users</h3>
 		  	</section>
 	  	</div>
 

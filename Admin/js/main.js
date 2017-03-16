@@ -23,10 +23,17 @@
 			$.ajax( 
                 "change_password.php?password="+pass
 	        ).done(function( response ) {
-		   		Materialize.toast('Parfait ! Votre compte est maintenant sécurisé', 4000)
+		   		Materialize.toast('Parfait ! Votre compte est maintenant sécurisé', 4000);
 	        	$('#changing').fadeOut(800);
 	        });
 		}else{
-		    Materialize.toast('Les mots de passe ne corespondent pas !', 4000)
+		    Materialize.toast('Les mots de passe ne corespondent pas !', 4000);
 		}
 	} 
+
+	$('#btn_home, #btn_photos, #btn_produits, #btn_commandes, #btn_users').on('click', function(){
+		$('#home, #photos, #produits, #commandes, #users').css('display','none');
+		var str = this.id;
+		var res = str.split("btn_");
+		$('#'+res[1]).css('display','block');
+	});

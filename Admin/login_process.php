@@ -16,7 +16,7 @@ if(isset($_POST['id']) && isset($_POST['pass']))
 
 	if (!$resultat)
 	{
-	   header('Location: login.php');
+	   header('Location: login.php?erreur=login');
 	}
 	else
 	{
