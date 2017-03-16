@@ -8,10 +8,10 @@
 }
 
 .connect{
-    	background: rgba(51, 51, 51, 0.85);
-    	position: absolute;
-    	left:32.5%;
-    	top:25%;
+	background: rgba(51, 51, 51, 0.85);
+	position: absolute;
+	left:32.5%;
+	top:25%;
 	width: 35%;
 	padding: 4em 2.5em;
 }
@@ -28,4 +28,43 @@
     	left: 33.3%;
 }
 
+.deco:hover,
+.deco:active{
+    background: rgba(183, 45, 45, 0.61)!important;
+}
+
+input{
+    color: #FFF!important;
+}
+
+.bg {
+    -webkit-filter: blur(15px);
+    filter: blur(15px);
+    transform: scale(1.1);
+}
+
+.side-nav li a{
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.connect{
+    margin-top: -5rem;
+}
+
+img.logo {
+    display: block;
+    margin: -10% auto -6%;
+    width: 14rem;
+}
+.preview {
+    margin-left: 22%;
+}
+section#home {
+    text-align: center;
+}
+#home .card-content input {
+    color: #2E2E2E!important;
+    width: 90%;
+}
 /* ************** Stylisation de la page Admin ************** */
