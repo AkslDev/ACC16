@@ -1,4 +1,5 @@
 /* ************** Stylisation de la page Login ************** */
+input:-webkit-autofill{background-color:transparent;}
 .login{
 	background-image: url('../img/fond.jpg');
 	background-size: cover;
