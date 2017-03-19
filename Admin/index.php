@@ -77,7 +77,7 @@ if (!isset($_SESSION['infos_user']['token'])) {
 		  		<table class="bordered highlight centered">
         					<thead>
           						<tr>	
-          							<th data-field="id_photo">ID</th>
+          							
           						    	<th data-field="photoname">Nom</th>
           						    	<th data-field="description">Description</th>
           						    	<th data-field="action">Action</th>
@@ -85,7 +85,6 @@ if (!isset($_SESSION['infos_user']['token'])) {
        		 			</thead>
         					<tbody>
           						<tr>
-          							<td>1</td>
           						  	<td>IMG-001.jpg</td>
           						  	<td>Préparation ACC16 Defender 130</td>
           						  	<td>
@@ -101,7 +100,6 @@ if (!isset($_SESSION['infos_user']['token'])) {
           						  	</td>
           						</tr>
           						<tr>
-          							<td>2</td>
           						  	<td>IMG-002.jpg</td>
           						  	<td>Préparation ACC16 Defender 130</td>
           						  	<td>

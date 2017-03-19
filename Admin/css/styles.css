@@ -64,8 +64,8 @@ input{
 }
 .preview {
         	position: absolute;
-        	right: 0;
-        	width: 76.6%;
+        	right: 0;    
+        	width: 80vw;
 }
 section#home {
     	text-align: center;
@@ -306,9 +306,12 @@ section#home {
 		margin-top: 3em;
 	}
 
-
-
-
-
+	.side-nav.fixed {
+	    left: 0;
+	    width: 20vw;
+	    -webkit-transform: translateX(0);
+	    transform: translateX(0);
+	    position: fixed;
+	}
 
 
