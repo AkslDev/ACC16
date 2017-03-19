@@ -23,7 +23,7 @@ if (isset($_SESSION['infos_user']['token'])) {
                 <img class="logo" src="img/logo.svg" alt="">
         				<div class="input-field col s12">
           					<i class="material-icons prefix">account_circle</i>
-          					<input id="icon_prefix" name="id" type="text" required class="validate">
+          					<input id="icon_prefix" name="id" type="text" required class="validate" autocomplete="off">
           					<label for="icon_prefix">Identifiant</label>
         				</div>
         				<div class="input-field col s12">

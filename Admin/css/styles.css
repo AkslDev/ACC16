@@ -1,5 +1,15 @@
 /* ************** Stylisation de la page Login ************** */
-input:-webkit-autofill{background-color:transparent;}
+@-webkit-keyframes autofill {
+    	to {
+       		color: #fff;
+       		background: transparent;
+   	}
+}
+input:-webkit-autofill {
+    	-webkit-animation-name: autofill;
+    	-webkit-animation-fill-mode: both;
+}	
+
 .login{
 	background-image: url('../img/fond.jpg');
 	background-size: cover;
@@ -15,6 +25,7 @@ input:-webkit-autofill{background-color:transparent;}
 	top:25%;
 	width: 35%;
 	padding: 4em 2.5em;
+	margin-top: -5rem;
 }
 .connect input{
 	margin-bottom: 2em;
@@ -29,43 +40,275 @@ input:-webkit-autofill{background-color:transparent;}
     	left: 33.3%;
 }
 
-.deco:hover,
-.deco:active{
-    background: rgba(183, 45, 45, 0.61)!important;
+/* ************** Stylisation de la page Admin - Accueil ************** */
+.bg {
+    	-webkit-filter: blur(15px);
+    	filter: blur(15px);
+    	transform: scale(1.1);
+}
+img.logo {
+    	display: block;
+    	margin: -10% auto -6%;
+    	width: 14rem;
+}
+.deco:hover,.deco:active{
+    	background: rgba(183, 45, 45, 0.61)!important;
+}
+.side-nav li a{
+    	text-transform: uppercase;
+    	font-size: 0.85rem;
 }
 
 input{
-    color: #FFF!important;
-}
-
-.bg {
-    -webkit-filter: blur(15px);
-    filter: blur(15px);
-    transform: scale(1.1);
-}
-
-.side-nav li a{
-    text-transform: uppercase;
-    font-size: 0.85rem;
-}
-
-.connect{
-    margin-top: -5rem;
-}
-
-img.logo {
-    display: block;
-    margin: -10% auto -6%;
-    width: 14rem;
+    	color: #FFF!important;
 }
 .preview {
-    margin-left: 22%;
+        	position: absolute;
+        	right: 0;
+        	width: 76.6%;
 }
 section#home {
-    text-align: center;
+    	text-align: center;
 }
 #home .card-content input {
-    color: #2E2E2E!important;
-    width: 90%;
+    	color: #2E2E2E!important;
+    	width: 90%;
 }
-/* ************** Stylisation de la page Admin ************** */
+.card-password{
+	display: block;
+   	margin: 4em 0;
+   	position: absolute;
+   	left: 23.5%;
+}
+/* ************** Stylisation de la page Admin - Photos ************** */
+	.photos h3{
+		position: absolute;
+		left: 5%;
+		margin-top: -2em;
+	}
+	.add_photo{
+		position: absolute;
+    		right: 5%;
+    		top: 5%;
+    		z-index: 0;
+	}
+	.photos table{
+		margin-top: 6em;	
+	}
+	.photos table i{
+		margin:0em 0.5em;
+
+	}
+	.photos table a{
+		color: black;
+		transition:all ease 0.5s;
+		transform: scale(1);
+		display: inline-block;
+	}
+	.photos table a:hover{
+		color: #b72d2d;
+		transform: scale(1.2);
+	}
+	.photo_viewer{
+		background-color:rgba(0, 0, 0, 0.8);
+		position: absolute;
+		right: 0;
+	    	top: -11.5%;
+		width: 100%;
+	   	height: 100vh;
+	}
+	.card_photo{
+		position: absolute;
+	    	width: 55vw;
+	   	background: #FFF;
+	    	height: 92vh;
+	    	top: 4%;
+	    	right: 14%;
+	    	padding: 4em 1em;
+	}
+	.card_photo img{
+		display: block;
+    		margin: 0 auto;
+	}
+	.photo_name{
+		text-align:center;
+		margin-bottom:1em;
+		color:#b72d2d;
+		text-transform: uppercase;
+		font-weight: 200;
+	}
+	.close_photo{
+		position: absolute;
+	    	right: 3%;
+	    	top: 3%;
+	    	color:#FFF;
+	    	transform:scale(1);
+	    	transition:all ease 0.5s;
+	}
+	.close_photo:hover{
+		transform: scale(1.2);
+		color:#b72d2d;
+	}
+	.photo_add{
+		background-color:rgba(0, 0, 0, 0.8);
+		position: absolute;
+		right: 0;
+	    	top: -11.5%;
+		width: 100%;
+	   	height: 100vh;
+	}
+	.card_add-photo{
+		position: absolute;
+	    	width: 55vw;
+	   	background: #FFF;
+	    	height: 92vh;
+	    	top: 4%;
+	    	right: 14%;
+	    	padding: 4em 1em;		
+	}
+	.file-photo, .description-photo{
+		width: 80%;
+    		margin: 5em auto;
+	}
+	#submit_photo{
+		margin: -2em auto;
+    		display: block;
+	}
+
+/* ************** Stylisation de la page Admin - Produits ************** */
+
+
+/* ************** Stylisation de la page Admin - Commandes ************** */
+	.commandes h3{
+		position: absolute;
+	    	left: 5%;
+	    	margin-top: -2em;
+	}
+	.commandes table{
+		margin-top: 6em;
+	}
+	.commandes table{
+		margin-top: 6em;
+	}
+	.commandes table i{
+		margin:0em 0.5em;
+	}
+	.commandes table a{
+		color: black;
+		transition:all ease 0.5s;
+		transform: scale(1);
+		display: inline-block;
+	}
+	.commandes table a:hover{
+		color: #b72d2d;
+		transform: scale(1.2);
+	}
+	.view-command{
+		background-color:rgba(0, 0, 0, 0.8);
+		position: absolute;
+		right: 0;
+	    	top: -11.5%;
+		width: 100%;
+	   	height: 100vh;
+	}
+	.command-card{
+		position: absolute;
+	    	width: 55vw;
+	   	background: #FFF;
+	    	height: 92vh;
+	    	top: 4%;
+	    	right: 14%;
+	    	padding: 1em;
+	}
+	.command-card h4{
+		text-align:center;
+		margin-bottom:1em;
+		color:#b72d2d;
+		text-transform: uppercase;
+		font-weight: 200;		
+	}
+	.command-card span{
+		font-weight: 500;		
+	}
+/* ************** Stylisation de la page Admin - Utilisateurs ************** */
+
+	.users h3{
+	    	position: absolute;
+	    	left: 5%;
+	    	margin-top: -2em;
+	}
+	.users table{
+		margin-top: 6em;
+	}
+	.users table i{
+		margin:0em 0.5em;
+	}
+	.users table a{
+		color: black;
+		transition:all ease 0.5s;
+		transform: scale(1);
+		display: inline-block;
+	}
+	.users table a:hover{
+		color: #b72d2d;
+		transform: scale(1.2);
+	}
+	.view_users{
+		background-color:rgba(0, 0, 0, 0.8);
+		position: absolute;
+		right: 0;
+	    	top: -11.5%;
+		width: 100%;
+	   	height: 100vh;
+	}
+	.card_users{
+		position: absolute;
+	    	width: 55vw;
+	   	background: #FFF;
+	    	height: 92vh;
+	    	top: 4%;
+	    	right: 14%;
+	    	padding: 1em;
+	}
+	.close_card{
+		position: absolute;
+	    	right: 3%;
+	    	top: 3%;
+	    	color:#FFF;
+	    	transform:scale(1);
+	    	transition:all ease 0.5s;
+	}
+	.close_card:hover{
+		transform: scale(1.2);
+		color:#b72d2d;
+	}
+	.card_users h4{
+		text-align:center;
+		margin-bottom:1em;
+		color:#b72d2d;
+		text-transform: uppercase;
+		font-weight: 200;
+	}
+	.card_users p{
+		text-align:center; 
+		margin-left: 3em;
+		margin-bottom:2em;
+	}
+	.card_users i{
+		line-height: 20px;
+	    	position: absolute;
+	    	margin-left: -1.5em;
+	}
+	.card_users span{
+		font-weight:700;
+	}
+	.card_users table{
+		margin-top: 3em;
+	}
+
+
+
+
+
+
+

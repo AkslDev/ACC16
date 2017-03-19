@@ -37,3 +37,57 @@
 		var res = str.split("btn_");
 		$('#'+res[1]).css('display','block');
 	});
+
+	// Section Photos 
+		// Voir la photo
+			$('.view_photo').on('click', function(){
+				// alert('test');
+				$('#photo_viewer').css('display', 'block')
+			});
+			$('.close_card').on('click', function(){
+				// alert('test');
+				$('#photo_viewer').css('display','none');
+			});
+
+		// Ajouter une Photo
+			$('#add_photo').on('click', function(){
+				// alert('test');
+				$('.photo_add').css('display', 'block');
+			});
+			$('#submit_photo').on('click', function(){
+				$('.photo_add').css('display','none');
+				Materialize.toast('Photo ajoutée', 4000);
+			});
+
+	// Section Commandes 
+		// Voir la photo
+			$('.view_command').on('click', function(){
+				// alert('test');
+				$('#view-command').css('display', 'block')
+			});
+			$('.close_card').on('click', function(){
+				// alert('test');
+				$('#view-command').css('display','none');
+			});
+
+	// Section Utilisateurs
+		// Voir l'Utilisateur
+		$('.view').on('click', function(){
+			// alert('test');
+			$('#view_users').css('display','block');
+		});
+		$('.close_card').on('click', function(){
+			// alert('test');
+			$('#view_users').css('display','none');
+		});
+		// Modifier/Supprimer
+		$('.edit').on('click', function(){
+			alert('test');
+		});
+		$('.delete').on('click', function(){
+			alert('test');
+		});
+
+
+
+
