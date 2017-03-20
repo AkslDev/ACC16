@@ -125,10 +125,12 @@ if (!isset($_SESSION['infos_user']['token'])) {
 						<img src="http://www.wallpaperscharlie.com/wp-content/uploads/2016/07/Land-Rover-Defender-HD-Wallpapers-2.jpg" alt="Image" width="600">
       					</div>
       				</div>
-      				<div class="photo_add" style="display:none;">
+      				<div class="photo_add" id="photo_add" style="display:none;">
+                <a href="#" class="close_card" id="close_card">
+                  <i class="material-icons">close</i>
+                </a>
       					<div class="card_add-photo">
       						<h4 class="photo_name">Ajouter une photo</h4>
-						<form action="#">
     							<div class="file-field input-field file-photo">
       								<div class="btn">
         									<span>Photo</span>
@@ -143,7 +145,6 @@ if (!isset($_SESSION['infos_user']['token'])) {
          	 							<label for="textarea1">Description de la Photo</label>
         							</div>
         							<button class="waves-effect waves-light btn" id="submit_photo" >Ajouter</button>
-						</form>
       					</div>
       				</div>
 		  	</section>
@@ -163,7 +164,7 @@ if (!isset($_SESSION['infos_user']['token'])) {
 		          				</tr>
 		       		 	</thead>
 		        			<tbody>
-		        				<tr>
+		        				<tr>      
 		          				  	<td>302</td>
 		          				  	<td>07/02/2017</td>
 		          				  	<td>Poignée P12FD45</td>
@@ -215,6 +216,18 @@ if (!isset($_SESSION['infos_user']['token'])) {
 		          						<tr>
 		            						<td>Poignée P12FD45</td>
 		          						</tr>
+                          <tr>
+                            <td>Poignée P12FD45</td>
+                          </tr>
+                          <tr>
+                            <td>Poignée P12FD45</td>
+                          </tr>
+                          <tr>
+                            <td>Poignée P12FD45</td>
+                          </tr>
+                          <tr>
+                            <td>Poignée P12FD45</td>
+                          </tr>
 		        					</tbody>
 		      				</table>
       					</div>
@@ -232,35 +245,15 @@ if (!isset($_SESSION['infos_user']['token'])) {
           						    	<th data-field="action">Action</th>
           						</tr>
        		 			</thead>
-        					<tbody>
-          						<tr>
-          						  	<td>01</td>
-          						  	<td>TASTE</td>
-          						  	<td>Olivier</td>
-          						  	<td>Oliv.taste@gmail.com</td>
+        					<tbody id="users_lists">
+          						<tr id="card_user">
+          						  	<td id="id_user">01</td>
+          						  	<td id="first_name">TASTE</td>
+          						  	<td id="second_name">Olivier</td>
+          						  	<td id="email_content">Oliv.taste@gmail.com</td>
           						  	<td>
           						  		<a href="#" class="view">
           						  			<i class="material-icons">remove_red_eye</i>
-          						  		</a>
-          						  		<a href="#" class="edit">
-          						  			<i class="material-icons">mode_edit</i>
-          						  		</a>
-  		          						<a href="#" class="delete">
-          						  			<i class="material-icons">delete</i>
-          						  		</a>
-          						  	</td>
-          						</tr>
-          						<tr>
-            						<td>02</td>
-            						<td>FRAIS</td>
-            						<td>Kévin</td>
-            						<td>Kévin.fr@yahoo.com</td>
-            					  	<td>
-          						  		<a href="#" class="view">
-          						  			<i class="material-icons">remove_red_eye</i>
-          						  		</a>
-          						  		<a href="#" class="edit">
-          						  			<i class="material-icons">mode_edit</i>
           						  		</a>
   		          						<a href="#" class="delete">
           						  			<i class="material-icons">delete</i>
@@ -277,23 +270,23 @@ if (!isset($_SESSION['infos_user']['token'])) {
       						<h4 class="card_name" id="card_name">Taste Olivier</h4>
       						<p class="card_email" id="card_email">
       							<i class="material-icons">email</i>
-      							E-Mail: <span>Oliv.taste@gmail.com</span>
+      							E-Mail: <span id="email_content">Oliv.taste@gmail.com</span>
       						</p>
       						<p class="card_phone" id="card_phone">
       							<i class="material-icons">phone</i>
-      							N° de téléphone: <span>0635427091</span>
+      							N° de téléphone: <span id="phone_content">0635427091</span>
       						</p>
       						<p class="card_adress" id="card_adress">
       							<i class="material-icons">location_on</i>
-      							Adresse: <span>40 rue des poiriers 67890 BLOIS</span>
+      							Adresse: <span id="adress_content">40 rue des poiriers 67890 BLOIS</span>
       						</p>
       						<p class="card_date" id="card_date">
       							<i class="material-icons">child_friendly</i>
-      							Date de naissance: <span>02/10/1982</span>
+      							Date de naissance: <span id="date_content">02/10/1982</span>
       						</p>
       						<p class="card_last-command" id="card_last-command">
 							<i class="material-icons">date_range</i>
-      							Derniere commande: <span>07/02/2017</span>
+      							Derniere commande: <span>07/02/2017 // @TODO</span>
       						</p>
 		      				<table class="bordered highlight centered">
 		        					<thead>

@@ -7,7 +7,7 @@ if(isset($_POST['id']) && isset($_POST['pass']))
 	 $hash 	= hash("haval256,5",  $pass);
 
 	 // Vérification des identifiants
-	$req = $bdd->prepare('SELECT id FROM membres WHERE email = :email AND mdp = :pass');
+	$req = $bdd->prepare('SELECT id FROM admin WHERE email = :email AND mdp = :pass');
 	$req->execute(array(
 	    'email' => $id,
 	    'pass' => $hash));
@@ -21,7 +21,7 @@ if(isset($_POST['id']) && isset($_POST['pass']))
 	else
 	{
 	    //Récupération des infos
-	    $reponse5 = $bdd->query('SELECT * FROM membres WHERE email="'.$id.'"');
+	    $reponse5 = $bdd->query('SELECT * FROM admin WHERE email="'.$id.'"');
 	    while ($donnees5 = $reponse5->fetch())
 	    {
 	       $_SESSION['infos_user']['id'] 		= $id;
