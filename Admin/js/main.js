@@ -76,9 +76,6 @@
 		$('.edit').on('click', function(){
 			alert('test');
 		});
-		$('.delete').on('click', function(){
-			alert('test');
-		});
 
 
 	// BOUTON CLOSE / FERME FENETRE
