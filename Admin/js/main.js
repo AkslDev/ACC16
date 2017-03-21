@@ -66,6 +66,7 @@
 			});
 			
 	// Section Utilisateurs
+		
 		// Voir l'Utilisateur
 		$('.view').on('click', function(){
 			// alert('test');
@@ -76,6 +77,7 @@
 		$('.edit').on('click', function(){
 			alert('test');
 		});
+		$('#modal-delete_user').modal();
 
 
 	// BOUTON CLOSE / FERME FENETRE

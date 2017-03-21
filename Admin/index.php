@@ -255,13 +255,28 @@ if (!isset($_SESSION['infos_user']['token'])) {
           						  		<a href="#" class="view">
           						  			<i class="material-icons">remove_red_eye</i>
           						  		</a>
-  		          						<a href="#" class="delete">
+  		          						<a href="#" class="delete" href="#modal-delete_user">
           						  			<i class="material-icons">delete</i>
           						  		</a>
           						  	</td>
           						</tr>
         					</tbody>
       				</table>
+                            <!-- Modal Confirm Delete User -->
+                            <div id="modal-delete_user" class="modal">
+                                  <div class="modal-content">
+                                      	<h4>Modal Header</h4>
+                                		<p>A bunch of text</p>
+                              	</div>
+                              	<div class="modal-footer">
+                                		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="confirm-del_user">
+                                			Confirmer
+                                		</a>
+                                		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">
+                                			Annuler
+                                		</a>
+                              	</div>
+                            </div>
       				<div class="view_users" id="view_users" style="display: none;">
       					<a href="#" class="close_card" id="close_card">
       						<i class="material-icons">close</i>

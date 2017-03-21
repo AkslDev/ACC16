@@ -17,16 +17,21 @@
 			}
 
 			$('.delete').on('click', function(){
-				console.log(token);
+				$('#modal-delete_user').modal('open');
+				$('#confirm-del_user').on('click',function(){
 					$.ajax("php/delete_user.php?token="+token)
 					.done(function(response) {
-					    	if (response.response=="ok"){
-					    		Materialize.toast('Utilisateur suprimé', 1000);
-					    		// $('.delete').parent().parent().parent().remove();
-					    	}
-					});
-			    		$(this).closest('tr').remove();
+				    	if (response.response=="ok"){
+				    		Materialize.toast('Utilisateur suprimé', 1000);
+				    		$('.delete').parent().parent().parent().remove();
+				    	}
+				    	$(this).closest('tr').remove();
 				});
+			    	
+
+				});
+
+			});
 		});
 	});
 

@@ -1,0 +1,165 @@
+/* ******************************* Feuille de style de Index.HTML ******************************* */
+	/**************************************************	
+
+		        	     COULEURS DU SITE
+		        	          Blanc: #FFFFFF;
+			        Rouge: #BA1717;
+			      Gris Foncé: #333334;
+
+	**************************************************/
+
+/* ********** Importation des polices ********** */
+	@font-face {
+		font-family: 'Helvetica Neue LT Std';
+		src: 	url('../fonts/HelveticaNeueLTStd-BdCn.ttf') format('truetype');
+		font-weight: bold;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Helvetica Neue LT Std';
+		src: url('../fonts/HelveticaNeueLTStd-Cn.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Helvetica Neue LT Std';
+		src: url('../fonts/HelveticaNeueLTStd-ThCn.ttf') format('truetype');
+		font-weight: 100;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Helvetica Neue LT Std';
+		src: url('../fonts/HelveticaNeueLTStd-LtCn.ttf') format('truetype');
+		font-weight: 300;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Helvetica Neue LT Std';
+		src: url('HelveticaNeueLTStd-CnO.ttf') format('truetype');
+		font-weight: normal;
+		font-style: italic;
+	}
+/* ********** Couleurs ********** */
+	.blanc{
+		color:#FFFFFF;
+	}	
+	.fdblanc{
+		background-color: #FFFFFF;
+	}
+	.rouge{
+		color:#BA1717;
+	}	
+	.fdrouge{
+		background-color: #BA1717;
+	}
+	.gris{
+		color:#333334;
+	}
+	.fdgris{
+		background-color:#333334;
+	}
+/* ********** Stylisation du Body ********** */
+	body{
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-family: 'Helvetica Neue LT Std'!important;
+	}
+
+
+/* *!**!**!**!**!* Stylisation de la HomePage *!**!**!**!**!* */
+nav{
+	padding: 2% 5%;
+    	box-shadow: 5px -1px 15px #000000;
+    	height: 120px;
+}
+.logo_nav{
+    	width: 15%;
+}
+.nav_link{
+	list-style: none;
+	position: absolute;
+	top: 4.5%;
+   	left: 34.935%;
+}
+.nav_link li{
+	display: inline-block;
+	padding:1em;
+}
+.nav_link li a{
+	font-weight: normal;
+	font-style: normal;
+	text-transform: uppercase;
+	transform: scale(1);
+	transition: all ease 0.5s;
+	display: block;
+}
+.nav_link li a:hover{
+	color:#BA1717;
+	transition: all ease 0.5s;
+	transform: scale(1.1);
+}
+.nav_conseil{
+	position: absolute;
+    	right: 7%;
+    	top: 2%;
+    	font-size:0.8em;
+    	font-style: italic
+}
+.nav_conseil i{
+	position: absolute;
+    	margin-left: -12%;
+    	margin-top: 0%;
+    	font-size: 1.4em!important;
+}
+.nav_conseil a{
+	text-decoration: none;
+    	color: black;
+    	font-weight: bold;
+    	font-style: normal;
+}
+.nav_conseil span{
+	color:#ababab;	
+	font-style: italic;
+}
+.nav_connect{
+    	position: absolute;
+    	right: 12%;
+    	top: 7%;
+    	padding: 0.5% 2% 0.5% 4%;
+    	font-weight: bold;
+}
+.nav_connect i{
+	position: absolute;
+    	left: 7%;
+   	top: 24%;
+}
+.nav_connect span{
+	font-weight:normal;
+}
+.nav_panier{
+   	position: absolute;
+   	right: 2%;
+   	top: 7%;
+   	padding: 0.5% 2% 0.5% 4%;
+   	font-weight: bold;
+}
+.nav_panier i{
+    	position: absolute;
+    	left: 12%;
+    	top: 24%;
+}
+.nav_panier span{
+	font-weight:normal;
+}
+
+
+
+
+
+
+
+
+
