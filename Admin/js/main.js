@@ -1,3 +1,30 @@
+	$(document).ready(function(){
+		let pos = localStorage.getItem('position');
+		if (pos != "undefined") {
+			$('#home, #photos, #produits, #commandes, #users').css('display','none');
+			$('#'+pos).css('display','block');
+			$('#btn_'+pos).addClass('active');
+			switch (pos) {
+			  case "photos":
+			    gestions_photos();
+			    break;
+			  case "produits":
+			    gestions_produits();
+			    break;
+			  case "commandes":
+			    gestions_commandes();
+			    break;
+			  case "users":
+			    gestions_users();
+			    break;
+			  case "home":
+			    gestions_home();
+			    break;
+			}
+		}
+	});
+
+
 	$('.button-collapse').sideNav({
 	  menuWidth: 300, // Default is 300
 	  edge: 'left', // Choose the horizontal origin
@@ -34,10 +61,13 @@
 	} 
 
 	$('#btn_home, #btn_photos, #btn_produits, #btn_commandes, #btn_users').on('click', function(){
+		$('.side-nav li').removeClass("active");
+	    $(this).addClass("active");
 		$('#home, #photos, #produits, #commandes, #users').css('display','none');
 		var str = this.id;
 		var res = str.split("btn_");
 		$('#'+res[1]).css('display','block');
+		localStorage.setItem('position', res[1]);
 	});
 
 	// Section Photos 
@@ -67,11 +97,6 @@
 			
 	// Section Utilisateurs
 		
-		// Voir l'Utilisateur
-		$('.view').on('click', function(){
-			// alert('test');
-			$('#view_users').css('display','block');
-		});
 		
 		// Modifier/Supprimer
 		$('.edit').on('click', function(){
@@ -84,6 +109,8 @@
 	$('.close_card').on('click', function(){
 		// alert('test');
 		$('#view_users').css('display','none');
+		$('.loader').css('display', 'block');
+		$('.more_info').css('display', 'none');
 		$('#view-command').css('display','none');
 		$('#photo_viewer').css('display','none');
 		$('#photo_add').css('display','none');

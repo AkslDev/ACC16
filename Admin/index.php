@@ -30,20 +30,20 @@ if (!isset($_SESSION['infos_user']['token'])) {
 			      		<a href="#!email"><span class="white-text email"><?php echo $_SESSION['infos_user']['email']; ?></span></a>
 			    	</div>
 		    	</li>
-		    	<li>
-		    		<a href="#!" id="btn_home" ><i class="material-icons">home</i>Accueil</a>
+		    	<li id="btn_home">
+		    		<a href="#!"><i class="material-icons">home</i>Accueil</a>
 	    		</li>
-		    	<li>
-		    		<a href="#!" id="btn_photos" ><i class="material-icons">burst_mode</i>Photos</a>
+		    	<li id="btn_photos">
+		    		<a href="#!"><i class="material-icons">burst_mode</i>Photos</a>
 	    		</li>
-		    	<li>
-		    		<a href="#!" id="btn_produits" ><i class="material-icons">dashboard</i>Produits</a>
+		    	<li id="btn_produits">
+		    		<a href="#!" ><i class="material-icons">dashboard</i>Produits</a>
 	    		</li>
-		    	<li>
-		    		<a href="#!" id="btn_commandes" ><i class="material-icons">shopping_basket</i>Commandes</a>
+		    	<li id="btn_commandes">
+		    		<a href="#!"><i class="material-icons">shopping_basket</i>Commandes</a>
 	    		</li>
-		    	<li>
-		    		<a class="waves-effect" href="#!" id="btn_users" ><i class="material-icons">supervisor_account</i>Utilisateurs</a>
+		    	<li id="btn_users">
+		    		<a class="waves-effect" href="#!"><i class="material-icons">supervisor_account</i>Utilisateurs</a>
 	    		</li>
 	    		<li>
 	    			<a class="waves-effect waves-light btn-large deco" href="deconnexion.php">déconnexion</a>
@@ -234,7 +234,7 @@ if (!isset($_SESSION['infos_user']['token'])) {
 		      		</div>
 		  	</section>
 		  	<section class="users" id="users" style="display: none;">
-		  		<h3>Utilisateurs</h3>
+		  		<h3>Utilisateurs (<span id="counter"></span>)</h3>
 		  		<table class="bordered highlight centered">
         					<thead>
           						<tr>
@@ -246,13 +246,13 @@ if (!isset($_SESSION['infos_user']['token'])) {
           						</tr>
        		 			</thead>
         					<tbody id="users_lists">
-          						<tr id="card_user">
+          						<tr id="card_user" class="card_user">
           						  	<td id="id_user">01</td>
           						  	<td id="first_name">TASTE</td>
           						  	<td id="second_name">Olivier</td>
           						  	<td id="email_content">Oliv.taste@gmail.com</td>
           						  	<td>
-          						  		<a href="#" class="view">
+          						  		<a href="#" id="view" class="view">
           						  			<i class="material-icons">remove_red_eye</i>
           						  		</a>
   		          						<a href="#" class="delete" href="#modal-delete_user">
@@ -262,80 +262,84 @@ if (!isset($_SESSION['infos_user']['token'])) {
           						</tr>
         					</tbody>
       				</table>
-                            <!-- Modal Confirm Delete User -->
-                            <div id="modal-delete_user" class="modal">
-                                  <div class="modal-content">
-                                      	<h4>Modal Header</h4>
-                                		<p>A bunch of text</p>
-                              	</div>
-                              	<div class="modal-footer">
-                                		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="confirm-del_user">
-                                			Confirmer
-                                		</a>
-                                		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">
-                                			Annuler
-                                		</a>
-                              	</div>
-                            </div>
+              <!-- Modal Confirm Delete User -->
+              <div id="modal-delete_user" class="modal">
+                    <div class="modal-content">
+                        	<h4>Êtes-vous sûr de vouloir supprimer ce compte <span id="familly_name"></span> ?</h4>
+                	</div>
+                	<div class="modal-footer">
+                  		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="confirm-del_user">
+                  			Confirmer
+                  		</a>
+                  		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">
+                  			Annuler
+                  		</a>
+                	</div>
+              </div>
       				<div class="view_users" id="view_users" style="display: none;">
       					<a href="#" class="close_card" id="close_card">
       						<i class="material-icons">close</i>
       					</a>
       					<div class="card_users">
-      						<h4 class="card_name" id="card_name">Taste Olivier</h4>
-      						<p class="card_email" id="card_email">
-      							<i class="material-icons">email</i>
-      							E-Mail: <span id="email_content">Oliv.taste@gmail.com</span>
-      						</p>
-      						<p class="card_phone" id="card_phone">
-      							<i class="material-icons">phone</i>
-      							N° de téléphone: <span id="phone_content">0635427091</span>
-      						</p>
-      						<p class="card_adress" id="card_adress">
-      							<i class="material-icons">location_on</i>
-      							Adresse: <span id="adress_content">40 rue des poiriers 67890 BLOIS</span>
-      						</p>
-      						<p class="card_date" id="card_date">
-      							<i class="material-icons">child_friendly</i>
-      							Date de naissance: <span id="date_content">02/10/1982</span>
-      						</p>
-      						<p class="card_last-command" id="card_last-command">
-							<i class="material-icons">date_range</i>
-      							Derniere commande: <span>07/02/2017 // @TODO</span>
-      						</p>
-		      				<table class="bordered highlight centered">
-		        					<thead>
-		          						<tr>
-		          						    	<th data-field="id">N° de Commande</th>
-		          						    	<th data-field="date">Date</th>
-		          						    	<th data-field="products">Produits</th>
-		          						    	<th data-field="payment">Moyens de paiement</th>
-		          						</tr>
-		       		 			</thead>
-		        					<tbody>
-		        						<tr>
-		          						  	<td>302</td>
-		          						  	<td>07/02/2017</td>
-		          						  	<td>Poignée P12FD45</td>
-		          						  	<td>Paypal</td>
-		          						</tr>
-		          						<tr>
-		          						  	<td>243</td>
-		          						  	<td>02/01/2017</td>
-		          						  	<td>Autoradio X15Z23</td>
-		          						  	<td>MasterCard</td>
-		          						</tr>
-		        					</tbody>
-		      				</table>
-      					</div>
-      				</div>
-		  	</section>
+                  <div class="loader">
+                    <img src="img/load.svg" alt="">
+                  </div>
+      						<div class="more_info" style="display: none;">
+                    <h4 class="card_name" id="card_name">Taste Olivier</h4>
+                      <p class="card_email" id="card_email">
+                        <i class="material-icons">email</i>
+                        E-Mail: <span id="email_content" class="email_content">Oliv.taste@gmail.com</span>
+                      </p>
+                      <p class="card_phone" id="card_phone">
+                        <i class="material-icons">phone</i>
+                        N° de téléphone: <span class="phone_content" id="phone_content">0635427091</span>
+                      </p>
+                      <p class="card_adress" id="card_adress">
+                        <i class="material-icons">location_on</i>
+                        Adresse: <span class="adress_content" id="adress_content">40 rue des poiriers 67890 BLOIS</span>
+                      </p>
+                      <p class="card_date" id="card_date">
+                        <i class="material-icons">child_friendly</i>
+                        Date de naissance: <span class="date_content" id="date_content">02/10/1982</span>
+                      </p>
+                      <p class="card_last-command" id="card_last-command">
+                       <i class="material-icons">date_range</i>
+                        Derniere commande: <span>07/02/2017 // @TODO</span>
+                      </p>
+                      <table class="bordered highlight centered">
+                          <thead>
+                              <tr>
+                                    <th data-field="id">N° de Commande</th>
+                                    <th data-field="date">Date</th>
+                                    <th data-field="products">Produits</th>
+                                    <th data-field="payment">Moyens de paiement</th>
+                              </tr>
+                        </thead>
+                          <tbody>
+                            <tr>
+                                  <td>302</td>
+                                  <td>07/02/2017</td>
+                                  <td>Poignée P12FD45</td>
+                                  <td>Paypal</td>
+                              </tr>
+                              <tr>
+                                  <td>243</td>
+                                  <td>02/01/2017</td>
+                                  <td>Autoradio X15Z23</td>
+                                  <td>MasterCard</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                    </div>
+                  </div>
+            </section>
+          </div>
 	  	</div>
 
 		<!-- Liens vers mes Scripts -->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="js/materialize.js"></script>
-            <script type="text/javascript" src="js/api_users.js"></script>
+    <script type="text/javascript" src="js/api_users.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 	</html>
