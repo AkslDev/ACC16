@@ -38,7 +38,7 @@
 	}
 	@font-face {
 		font-family: 'Helvetica Neue LT Std';
-		src: url('HelveticaNeueLTStd-CnO.ttf') format('truetype');
+		src: url('../fonts/HelveticaNeueLTStd-CnO.ttf') format('truetype');
 		font-weight: normal;
 		font-style: italic;
 	}
@@ -52,6 +52,9 @@
 	.rouge{
 		color:#BA1717;
 	}	
+	.rouge-lighten{
+		color:#d20404;
+	}
 	.fdrouge{
 		background-color: #BA1717;
 	}
@@ -68,98 +71,211 @@
 		font-family: 'Helvetica Neue LT Std'!important;
 	}
 
+/* *!**!**!**!**!* Stylisation de la Home Page *!**!**!**!**!* */
 
-/* *!**!**!**!**!* Stylisation de la HomePage *!**!**!**!**!* */
-nav{
-	padding: 2% 5%;
-    	box-shadow: 5px -1px 15px #000000;
-    	height: 120px;
-}
-.logo_nav{
-    	width: 15%;
-}
-.nav_link{
-	list-style: none;
-	position: absolute;
-	top: 4.5%;
-   	left: 34.935%;
-}
-.nav_link li{
-	display: inline-block;
-	padding:1em;
-}
-.nav_link li a{
-	font-weight: normal;
-	font-style: normal;
-	text-transform: uppercase;
-	transform: scale(1);
-	transition: all ease 0.5s;
-	display: block;
-}
-.nav_link li a:hover{
-	color:#BA1717;
-	transition: all ease 0.5s;
-	transform: scale(1.1);
-}
-.nav_conseil{
-	position: absolute;
-    	right: 7%;
-    	top: 2%;
-    	font-size:0.8em;
-    	font-style: italic
-}
-.nav_conseil i{
-	position: absolute;
-    	margin-left: -12%;
-    	margin-top: 0%;
-    	font-size: 1.4em!important;
-}
-.nav_conseil a{
-	text-decoration: none;
-    	color: black;
-    	font-weight: bold;
-    	font-style: normal;
-}
-.nav_conseil span{
-	color:#ababab;	
-	font-style: italic;
-}
-.nav_connect{
-    	position: absolute;
-    	right: 12%;
-    	top: 7%;
-    	padding: 0.5% 2% 0.5% 4%;
-    	font-weight: bold;
-}
-.nav_connect i{
-	position: absolute;
-    	left: 7%;
-   	top: 24%;
-}
-.nav_connect span{
-	font-weight:normal;
-}
-.nav_panier{
-   	position: absolute;
-   	right: 2%;
-   	top: 7%;
-   	padding: 0.5% 2% 0.5% 4%;
-   	font-weight: bold;
-}
-.nav_panier i{
-    	position: absolute;
-    	left: 12%;
-    	top: 24%;
-}
-.nav_panier span{
-	font-weight:normal;
-}
+	/* *!**!**!**!**!* Stylisation de la Nav *!**!**!**!**!* */
+		nav{
+			padding: 2% 5%;
+		    	box-shadow: 5px -1px 15px #000000;
+		    	height: 100px;
+		}
+		.logo_nav{
+		    	width: 12%;
+		    	top: 2.5%;
+		    	position: absolute;
+		}
+		.nav_link{
+			list-style: none;
+		    	position: absolute;
+		    	top: 6%;
+		    	left: 30.935%;
+		}
+		.nav_link li{
+			display: inline-block;
+			padding: 0 1em 0 0.8em;	
+		}
+		.nav_link li a{
+			font-weight: normal;
+			font-style: normal;
+			text-transform: uppercase;
+			transform: scale(1);
+			transition: all ease 0.5s;
+			display: block;
+		}
+		.nav_link li a:hover{
+			color:#BA1717;
+			transition: all ease 0.5s;
+			transform: scale(1.1);
+			text-shadow: 3px 3px 8px #6d6d6d;
+		}
+		.brdr-r-red{
+			border-right: 3px solid #BA1717;
+		    	height: 17px;
+		    	line-height: 23px;
+		}
+		.nav_conseil{
+			position: absolute;
+		    	right: 6%;
+		    	top: 1.5%;
+			font-size: 0.8em;
+		    	font-style: italic;
+		    	box-shadow: 0px 0px 0px #6d6d6d;
+		}
+		.nav_conseil i{
+			position: absolute;
+		    	margin-left: -12%;
+		    	margin-top: 0%;
+		    	font-size: 1.4em!important;
+		}
+		.nav_conseil a{
+			text-decoration: none;
+		    	color: black;
+		    	font-weight: bold;
+		    	font-style: normal;
+		    	transform: scale(1);
+		    	display: inline-block;
+		}
+		.nav_conseil a:hover{
+			color:#ba1717!important;
+			transform: scale(1.03);
+			transition: all ease 0.5s;
+		}
+		.nav_conseil span{
+			color:#ababab;	
+			font-style: italic;
+		}
 
+		.nav_connect,
+		.nav_connect i{
+		    	transition: all ease 0.5s;
+		}
 
+		.nav_connect:hover  i{
+			color:#ba1717!important;
+			transform: scale(1.1);
+		}
+		.nav_connect:hover{
+			color:#FFFFFF;
+			box-shadow: 3px 3px 8px #6d6d6d;
+		}
+		.nav_connect{
+		    	position: absolute;
+		    	right: 12%;
+		    	top: 5%;
+		    	font-size: 0.9em;
+		    	padding: 0.5% 2% 0.5% 4%;
+		    	font-weight: bold;
+		}
+		.nav_connect i{
+			position: absolute;
+		    	left: 7%;
+		   	top: 24%;
+		}
+		.nav_connect span{
+			font-weight:normal;
+		}
+		.nav_panier{
+		   	position: absolute;
+		   	right: 2%;
+		   	top: 5%;
+		   	padding: 0.5% 2% 0.5% 4%;
+		    	font-size: 0.9em;
+		   	font-weight: bold;
+		}
+		.nav_panier i{
+		    	position: absolute;
+		    	left: 12%;
+		    	top: 24%;
+		}
+		.nav_panier span{
+			font-weight:normal;
+		}
+		.nav_panier p{
+			position: absolute;
+		    	width: 25px;
+		    	height: 25px;
+		    	padding: 3px 0 0 8px;
+		    	border-radius: 15px;
+		    	right: -12px;
+		    	top: -12px;
+		}
+		.nav_panier, .nav_panier i{
+		    	transition: all ease 0.5s;
+		}
+		.nav_panier:hover  i{
+			color:#ba1717!important;
+			transform: scale(1.1);
+		}
+		.nav_panier:hover{
+			color:#FFFFFF;
+			box-shadow: 3px 3px 8px #6d6d6d;
+		}
 
+	/* *!**!**!**!**!* Stylisation du Header *!**!**!**!**!* */
+		.header{
+			    	background-image: url(../img/header.png);
+	   	 		background-size: cover;
+	    			background-repeat: no-repeat;
+	    			height: 86vh;
+		}
+		.text_header-left{
+			position: absolute;
+	    		left: 5%;
+	    		top: 25%;
+	    		height: 250px;
+	    		width: 24%;
+		}
+		.header_p1{
+	    		position: absolute;
+	    		line-height: 1.5em;
+	    		font-size: 2em;
+	    		font-weight: normal;
+	    		letter-spacing: 0.05em;
+	    		text-transform: uppercase;
+		}
+		.header_p1 span{
+			font-weight: bold;
+	    		font-size: 2em;
+	    		margin-left: -2px;
+		}
+		.header_p2{
+	    		font-weight: 100;
+	    		font-size: 1.8em;
+	    		position: absolute;
+	    		top: 37%;
+		}
+		.header_p3{
+			position: absolute;
+    			top: 52%;
+    			font-size: 1.7em;
+    			text-transform: uppercase;
+    			font-weight: bold;
+    			letter-spacing: 0.05em;
+		}
 
-
-
-
-
+	/* *!**!**!**!**!* Stylisation de Info *!**!**!**!**!* */
+		.info{
+    			height: 69vh;
+    			margin-top: -39px;
+    			background-image:url('../img/info.png');	
+    			background-size:cover;
+    			background-repeat: no-repeat;
+		}
+		.info ul{
+			list-style: none;
+			text-align: center;
+			padding-top: 6em;
+		}
+		.info li{
+			display:inline-block;
+			margin:0.5em 1.5em 0.5em 1.3em;
+    			padding-right: 3em;
+		}
+		.info i{
+			font-size: 4em;
+			margin-top: -25px;
+		}
+		.info span{
+			font-weight: bold;
+		}
 
