@@ -42,6 +42,9 @@
 		font-weight: normal;
 		font-style: italic;
 	}
+	.bold{
+		font-weight: bold!important;
+	}
 /* ********** Couleurs ********** */
 	.blanc{
 		color:#FFFFFF;
@@ -106,7 +109,6 @@
 			color:#BA1717;
 			transition: all ease 0.5s;
 			transform: scale(1.1);
-			text-shadow: 3px 3px 8px #6d6d6d;
 		}
 		.brdr-r-red{
 			border-right: 3px solid #BA1717;
@@ -210,10 +212,9 @@
 			color:#FFFFFF;
 			box-shadow: 3px 3px 8px #6d6d6d;
 		}
-
 	/* *!**!**!**!**!* Stylisation du Header *!**!**!**!**!* */
 		.header{
-			    	background-image: url(../img/header.png);
+			    	background-image: url(../img/home/header.png);
 	   	 		background-size: cover;
 	    			background-repeat: no-repeat;
 	    			height: 86vh;
@@ -224,6 +225,11 @@
 	    		top: 25%;
 	    		height: 250px;
 	    		width: 24%;
+		}
+		.text_header-left img{
+			position: absolute;
+    			top: 42%;
+    			left: 78%;
 		}
 		.header_p1{
 	    		position: absolute;
@@ -252,12 +258,46 @@
     			font-weight: bold;
     			letter-spacing: 0.05em;
 		}
-
-	/* *!**!**!**!**!* Stylisation de Info *!**!**!**!**!* */
+		.text_header-right{
+			position: absolute;
+	    		right: 10%;
+	    		top: 27%;
+		}
+		.header_p4{
+			font-size: 5em;
+   			text-transform: uppercase;
+   			font-weight: normal;
+   			letter-spacing: 0.01em;
+   			height: 68px;
+		}
+		.header_p5{
+			font-size: 2.1em;
+    			letter-spacing: 0.08em;
+    			font-weight:300;
+    			margin: 0;
+    			height: 40px;
+		}
+		.header_p6{
+			font-size: 1.65em;
+    			letter-spacing: 0.12em;
+    			font-weight: 300;
+    			height: 31px;
+    			margin: 0;
+		}
+		.header_p7{
+			font-size: 2.15em;
+   			letter-spacing: 0.05em;
+   			font-weight: normal;
+   			height: 34px;
+   			margin: 0;
+   			border-bottom: 2px solid #FFF;
+    			padding-bottom: 1.5em;
+		}
+	/* *!**!**!**!**!* Stylisation de la Section Info *!**!**!**!**!* */
 		.info{
     			height: 69vh;
     			margin-top: -39px;
-    			background-image:url('../img/info.png');	
+    			background-image:url('../img/home/info.png');	
     			background-size:cover;
     			background-repeat: no-repeat;
 		}
@@ -268,7 +308,7 @@
 		}
 		.info li{
 			display:inline-block;
-			margin:0.5em 1.5em 0.5em 1.3em;
+			margin:0.5em 1.3em 0.5em 1.3em;
     			padding-right: 3em;
 		}
 		.info i{
@@ -278,4 +318,241 @@
 		.info span{
 			font-weight: bold;
 		}
+	/* *!**!**!**!**!* Stylisation de la Section Cat-products *!**!**!**!**!* */
+		.cat-products{
+			margin: 8em 0 2em 0;
+			height: auto; 
+		}
+		.card-prdct{
+			width: 85%;
+			display: block;
+	    		margin: 2em auto;
+	    		position: relative;
+	    		cursor: pointer;
+			transition: all ease 0.6s;
+	    		transform:scale(1);
+		}
+		.card-prdct img{
+			width:100%;
+			margin:0 auto 1em;
+			display: block;
+		}
+		.card-prdct p{
+			text-transform: uppercase;
+	    		font-weight: bold;
+	    		font-size: 0.95em;
+	    		margin:0em;
+	    		color:#333334;
+	    		transition: all ease 0.6s;
+		}
+		.card-prdct svg{
+			position: absolute;
+	    		top: 0;
+	    		left: 0;
 
+		}
+		.card-prdct svg:not(:root) {
+	    		overflow: hidden;
+		}
+		.card-prdct  svg line {
+	    		stroke-width: 3;
+	    		fill: none;
+	    		-webkit-transition: all ease 0.6s;
+	    		transition: all ease 0.6s;
+		}
+		.card-prdct  svg line.right, 
+		.card-prdct  svg line.bottom,
+		.card-prdct  svg line.left, 
+		.card-prdct  svg line.top,
+		.card-prdct  svg line.diag {
+			stroke:#BA1717;
+		}
+		.card-prdct svg line.top,
+		.card-prdct svg line.bottom {
+			stroke-dashoffset:0;
+		}
+
+		.card-prdct svg line.left,
+		.card-prdct svg line.right {
+			stroke-dasharray: 490 400;
+		}
+		.card-prdct:hover{
+			transform:scale(1.05);
+		}
+		.card-prdct:hover p{
+			color:#BA1717;
+		}
+		.card-prdct:hover svg line.right {
+			-webkit-transform: translateY(-245px);
+   	 		transform: translateY(-245px);
+			transition-duration:0.1s;
+		}
+		.card-prdct:hover svg line.top {
+    			-webkit-transform: translateX(-314px);
+    			transform: translateX(-314px);
+    			transition-duration:0.1s;
+    			transition-delay:0.1s;
+		}
+		.card-prdct:hover svg line.left {
+    			-webkit-transform: translateY(183px);
+    			transform: translateY(183px);
+    			transition-duration:0.1s;
+    			transition-delay:0.2s;
+		}
+		.card-prdct:hover svg line.diag{
+			-webkit-transform:translateX(120px) translateY(27px);;
+			transform: translateX(120px) translateY(27px);
+			transition-duration:0.1s;
+    			transition-delay:0.3s;
+		}
+	/* *!**!**!**!**!* Stylisation du Footer *!**!**!**!**!* */
+		.footer{
+	    		background-image: url(../img/home/footer.png);
+	    		height: auto;
+	    		background-size: cover;
+	    		background-repeat: no-repeat;
+		}
+		.list-footer{
+			padding-top: 4em;
+		}
+		.brdr-b-red{
+			border-bottom: 1px solid #BA1717;
+		}
+		.list-footer ul{
+			list-style: none;
+			text-align: center;
+			padding-top: 6em;
+			margin-bottom: 3em;
+		}
+		.list-footer li{
+			display: inline-block;
+			margin:0.5em 2.5em;
+	    		padding-right: 3em;
+		}
+		.list-footer p{
+			font-weight:bold;
+			text-transform: uppercase;
+		}		
+		.list-footer i{
+			font-size: 3em;
+			margin-top: -5px;
+		}
+		.footer-b p{
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.list-rs ul{
+			list-style: none;
+			text-align: left;
+			margin-left: 0!important;
+			padding-top: 6em;
+		}
+		.list-rs li{
+			display: inline-block;
+			margin-top:0.5em;
+	    		padding-right: 1em;
+		}
+		.list-rs i{
+			font-size: 1.2em;
+	    		background-color: #FFF;
+	    		color: #333334;
+	    		padding: 5px 7px;
+	    		border-radius: 17px;
+	    		width: 30px;
+	   	 	height: 30px;
+	   	 	transform: scale(1);
+	   	 	transition: all ease 0.5s;
+		}
+		.list-rs a:hover i{
+			background-color:#BA1717;
+			transform: scale(1.1);
+			color:#FFF;
+		}
+		.services img{
+			width: 65%;
+		}
+		.contact-us p{
+			font-weight: normal;
+		}
+		.contact-us span{
+			color:#a5a5a5;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.contact-us i{
+	    		position: absolute;
+	    		margin-left: -35px;
+	    		margin-top: -3px;
+		}
+
+/* *!**!**!**!**!* Stylisation de la Page Contact *!**!**!**!**!* */
+	.contact{
+		height:auto;
+		display: block;
+	}
+	.contact h3{
+		font-family: 'Helvetica Neue LT Std'!important;
+		text-transform: uppercase;
+    		margin-top: 1em;
+    		padding-left: 2em;
+    		padding-bottom: 0.5em;
+    		border-bottom: 2px solid #BA1717;
+	}
+	.contact p{
+		width: 60%;
+		display: block;
+		margin:1em auto;
+		font-size: 1.5em;
+		font-style: normal;
+		font-weight:normal;
+	}
+	form{
+		padding-top: 0.5em;
+	}
+	.contact-left{
+		display: inline-block;
+    		margin-left: 16em;
+    		width: 23%;
+    		height: 330px;
+    		position: absolute;
+    		left: 0;
+	}
+	.contact-left input{
+		height: 55px;
+		background-color: #333334;
+		color:#FFF;
+		font-weight: bold;
+		padding-top: 14px;
+		padding-left: 15px;
+    		font-size: 1.3em;
+	}
+	.contact-right{
+    		display: inline-block;
+    		margin-left: 2em;
+    		margin-right: 13em;
+    		width: 39%;
+    		position: absolute;
+    		right: 0;	
+	}
+	.contact-right textarea{
+		height:250px;
+		margin-bottom: 1.5em;
+		background-color: #333334;
+		color:#FFF;
+		font-weight: bold;
+		text-transform: uppercase;
+		padding-top: 14px;
+		padding-left: 15px;
+    		font-size: 1.3em;
+	}
+	.contact-right button{
+		width: 100%;
+    		background: #BA1717;
+    		padding: 17px;
+    		margin-top: -14px;
+    		color: #FFF;
+    		text-transform: uppercase;
+    		font-weight: bold;
+    		font-size: 1.2em;
+    		font-family: 'Helvetica Neue LT Std'!important;
+	}
