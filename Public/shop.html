@@ -39,18 +39,26 @@
 			<a href="#">06.63.24.12.74</a>
 			<span>(non surtaxé)</span>
 		</p>
-		<button  type="button" href="#" class="nav_connect fdgris blanc" data-toggle="dropdown">
-			<i class="material-icons">perm_identity</i>
-			Mon Compte<br>
-			<span>Se Connecter</span>	
-		</button>
-		<a href="#" class="nav_panier fdgris blanc">
+		<div class="drop">
+			<a href="#"  id="nav-connect" class="nav_connect fdgris blanc">
+				<i class="material-icons">perm_identity</i>
+				Mon Compte<br>
+				<span>Se Connecter</span>	
+			</a>
+			<div class="fdgris" id="drop-connect" style="display: none;">
+				<ul>	
+					<li class="drop-brdr"><a class="blanc" href="connexion.html">Connexion</a></li>
+					<li class="drop-brdr"><a class="blanc" href="inscription.html">Inscription</a></li>
+					<li><a class="blanc" href="forget.html">Mot de passe oublié</a></li>				
+			</ul>
+			</div>			
+		</div>
+		<a href="panier.html" class="nav_panier fdgris blanc">
 			<i class="material-icons">shopping_cart</i>
 			Panier <br>
 			<span>0,00€</span>
-			<p class="blanc fdrouge">0</p>
+			<p class="blanc fdrouge" id="nb-panier">0</p>
 		</a>
-
 	</nav>
 	<!-- Fin de la Nav -->
 	<!-- Début de la Section -->
@@ -72,12 +80,10 @@
     						<option value="phase2">1990-2007 Phase II</option>
     						<option value="phase3">2007-2016 Phase III</option>
   					</select>
-					<select class="type">
-  						<option value="null">Type de produit</option>
-  					</select>
 				</form>
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="shop-left large-3">
 				<ul>
@@ -135,7 +141,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="list-product large-9">
+			<div id="list-product" class="list-product large-9" >
 		  		<div class="small-3 large-3" style="display:inline-block; margin-left:3.5rem;">
 				  	<a class="shop-card">
 				  		<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
@@ -175,6 +181,56 @@
 		  				<p>nos préparations</p>
 		  			</a>
 		  		</div>
+			</div>
+			<div id="view-product" class="view-product large-9" style="display: none;" >
+				<div class="row">
+				<a href="#" id="close-product"><i class="material-icons">close</i></a>
+					<div class="large-4 title-product">
+						<p class="gris bold">Ensemble de 2 Barres de toit avec rail sur benne</p>
+					</div>
+					<div class="large-7 img-product">
+						<img src="img/boutique/product/barre-de-toit.png" alt="Image-Produit">
+					</div>
+				</div>		
+				<div class="row">
+					<div class="large-7">
+						<p class="description-product bold gris">
+							Vous avez un autre pickup que le Ford Ranger T6 içi présenté et des équipements vous intéressent ? 
+							<br><br>
+							Nos rideaux coulissant existent pour l'ensemble des pickup du marché, nous sommes distributeurs de la gamme Vision X pour l'éclairage LED et de Front Runner pour les Galeries.
+							<br><br>
+							<span>
+							Nous concevons ensuite sur mesure les barres de toit sur benne ainsi que plateau coulissant, donc n'hésitez pas à prendre contact avec nous !
+							</span>
+							<br>
+						</p>	
+					</div>
+					<div class="large-3 info-product fdgris" align="center">
+						<p class="dispo blanc">Disponibilité<br>
+							<span class="bold">en stock</span>
+						</p>
+						<p class="price-product blanc bold">390<span class="rouge">,</span>00€
+						</p>
+						<label class="bold blanc">Quantité<br>
+  							<select>
+    								<option value="1">1</option>
+    								<option value="2">2</option>
+    								<option value="3">3</option>
+    								<option value="4">4</option>
+   								<option value="5">5</option>
+    								<option value="6">6</option>
+    								<option value="7">7</option>
+    								<option value="8">8</option>
+								<option value="9">9</option>
+    								<option value="10">10</option>
+  							</select>
+						</label>
+					</div>
+					<a href="#" class="add-panier" id="btn-panier">
+						<i class="material-icons">shopping_cart</i>
+						Ajouter au panier
+					</a>
+				</div>	
 			</div>
 		</div>
 	</section>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>ACC16 - Contact</title>
+	<title>ACC16 - Boutique</title>
 
 	<!-- Liens vers mes CSS -->
 	<link rel="stylesheet" href="css/styles.css">
@@ -24,13 +24,13 @@
 				<a href="index.html" class="gris">Accueil</a>
 			</li>
 			<li class="brdr-r-red">
-				<a href="shop.html" class="gris">Boutique</a>
+				<a href="shop.html" class="gris nav-active">Boutique</a>
 			</li>
 			<li class="brdr-r-red">
 				<a href="galerie.html" class="gris">Galerie</a>
 			</li>
 			<li>
-				<a href="contact.html" class="gris  nav-active">Contact</a>
+				<a href="contact.html" class="gris">Contact</a>
 			</li>
 		</ul>
 		<p class="nav_conseil">
@@ -57,31 +57,16 @@
 			<i class="material-icons">shopping_cart</i>
 			Panier <br>
 			<span>0,00€</span>
-			<p class="blanc fdrouge">0</p>
+			<p class="blanc fdrouge" id="nb-panier">0</p>
 		</a>
 	</nav>
 	<!-- Fin de la Nav -->
 	<!-- Début de la Section -->
-	<section class="contact">
-		<h3 class="gris bold">Nous contacter</h3>
-		<p class="gris">Vous souhaitez obtenir des informations sur un produit en particulier, sur une compatibilité de matériel ? <br>Vous avez une commande en cours et voulez la modifier ? 
-		<br>Une demande de retour à effectuer ?</p>
-		<form>
-			<div class="row">
-				<div class="contact-left">
-					<input type="text" placeholder="Prénom">
-					<input type="text" placeholder="Nom">
-					<input type="email" placeholder="E-Mail">
-				</div>
-				<div class="contact-right">
-					<textarea placeholder="Message"></textarea>
-					<button type="submit">Envoyer</button>
-				</div>	
-			</div>
-		</form>
+	<section class="panier">
+		<h3 class="gris bold">Panier</h3>
 	</section>
 	<!-- Début du Footer -->
-	<section class="footer">
+<!-- 	<section class="footer">
 		<div class="list-footer">
 			<ul>
 				<li>
@@ -138,7 +123,7 @@
   				</p>				
   			</div>
   		</div>
-	</section>
+	</section> -->
 	<!-- Fin du footer -->
 	<!-- Fin de la Section -->
 	<!-- Liens vers mes Scripts -->

@@ -39,12 +39,21 @@
 			<a href="#">06.63.24.12.74</a>
 			<span>(non surtaxé)</span>
 		</p>
-		<a href="#" class="nav_connect fdgris blanc">
-			<i class="material-icons">perm_identity</i>
-			Mon Compte<br>
-			<span>Se Connecter</span>	
-		</a>
-		<a href="#" class="nav_panier fdgris blanc">
+		<div class="drop">
+			<a href="#"  id="nav-connect" class="nav_connect fdgris blanc">
+				<i class="material-icons">perm_identity</i>
+				Mon Compte<br>
+				<span>Se Connecter</span>	
+			</a>
+			<div class="fdgris" id="drop-connect" style="display: none;">
+				<ul>	
+					<li class="drop-brdr"><a class="blanc" href="connexion.html">Connexion</a></li>
+					<li class="drop-brdr"><a class="blanc" href="inscription.html">Inscription</a></li>
+					<li><a class="blanc" href="forget.html">Mot de passe oublié</a></li>				
+			</ul>
+			</div>			
+		</div>
+		<a href="panier.html" class="nav_panier fdgris blanc">
 			<i class="material-icons">shopping_cart</i>
 			Panier <br>
 			<span>0,00€</span>
