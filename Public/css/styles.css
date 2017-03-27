@@ -78,20 +78,23 @@
 
 	/* *!**!**!**!**!* Stylisation de la Nav *!**!**!**!**!* */
 		nav{
-			padding: 2% 5%;
-		    	box-shadow: 5px -1px 15px #000000;
-		    	height: 100px;
+    			padding: 2% 5%;
+    			box-shadow: 5px -1px 15px #000000;
+    			height: 100px;
+    			z-index: 1;
+    			background: #FFF;
+    			position: relative;
 		}
 		.logo_nav{
 		    	width: 12%;
-		    	top: 2.5%;
+		    	top: 17.5%;
 		    	position: absolute;
 		}
 		.nav_link{
 			list-style: none;
 		    	position: absolute;
-		    	top: 6%;
-		    	left: 30.935%;
+		    	top: 38%;
+		    	left: 33.935%;
 		}
 		.nav_link li{
 			display: inline-block;
@@ -109,6 +112,13 @@
 			color:#BA1717;
 			transition: all ease 0.5s;
 			transform: scale(1.1);
+			outline: none;
+		}
+		.nav-active{
+			color:#BA1717;
+			transition: all ease 0.5s;
+			transform: scale(1);
+			outline: none;	
 		}
 		.brdr-r-red{
 			border-right: 3px solid #BA1717;
@@ -117,8 +127,8 @@
 		}
 		.nav_conseil{
 			position: absolute;
-		    	right: 6%;
-		    	top: 1.5%;
+			right: 8%;
+    			top: 10.5%;
 			font-size: 0.8em;
 		    	font-style: italic;
 		    	box-shadow: 0px 0px 0px #6d6d6d;
@@ -146,27 +156,16 @@
 			color:#ababab;	
 			font-style: italic;
 		}
-
-		.nav_connect,
-		.nav_connect i{
-		    	transition: all ease 0.5s;
-		}
-
-		.nav_connect:hover  i{
-			color:#ba1717!important;
-			transform: scale(1.1);
-		}
-		.nav_connect:hover{
-			color:#FFFFFF;
-			box-shadow: 3px 3px 8px #6d6d6d;
-		}
 		.nav_connect{
+			cursor: pointer;
 		    	position: absolute;
 		    	right: 12%;
-		    	top: 5%;
+		    	top: 34%;
 		    	font-size: 0.9em;
-		    	padding: 0.5% 2% 0.5% 4%;
+		    	padding: 0.8% 2% 0.5% 4%;
 		    	font-weight: bold;
+		    	font-family: 'Helvetica Neue LT Std'!important;
+		    	line-height: 18px;
 		}
 		.nav_connect i{
 			position: absolute;
@@ -176,10 +175,21 @@
 		.nav_connect span{
 			font-weight:normal;
 		}
+		.nav_connect, .nav_connect i{
+		    	transition: all ease 0.5s;
+		}
+		.nav_connect:hover  i, .nav_connect:focus  i{
+			color:#ba1717!important;
+			transform: scale(1.1);
+		}
+		.nav_connect:hover, .nav_connect:focus{
+			color:#FFFFFF;
+			box-shadow: 3px 3px 8px #6d6d6d;
+		}
 		.nav_panier{
 		   	position: absolute;
 		   	right: 2%;
-		   	top: 5%;
+		   	top: 34%;
 		   	padding: 0.5% 2% 0.5% 4%;
 		    	font-size: 0.9em;
 		   	font-weight: bold;
@@ -204,11 +214,11 @@
 		.nav_panier, .nav_panier i{
 		    	transition: all ease 0.5s;
 		}
-		.nav_panier:hover  i{
+		.nav_panier:hover  i,.nav_panier:focus  i {
 			color:#ba1717!important;
 			transform: scale(1.1);
 		}
-		.nav_panier:hover{
+		.nav_panier:hover, .nav_panier:focus{
 			color:#FFFFFF;
 			box-shadow: 3px 3px 8px #6d6d6d;
 		}
@@ -325,6 +335,7 @@
 		}
 		.card-prdct{
 			width: 85%;
+			height: 16.85rem;
 			display: block;
 	    		margin: 2em auto;
 	    		position: relative;
@@ -339,11 +350,16 @@
 		}
 		.card-prdct p{
 			text-transform: uppercase;
-	    		font-weight: bold;
-	    		font-size: 0.95em;
-	    		margin:0em;
-	    		color:#333334;
-	    		transition: all ease 0.6s;
+    			font-weight: bold;
+    			font-size: 0.95em;
+    			margin: 0em;
+    			color: #FFF;
+    			transition: all ease 0.6s;
+    			position: absolute;
+    			top: -1rem;
+    			background: #BA1717;
+    			padding: 0.5rem 2rem 0.4rem;
+    			left: -1rem;
 		}
 		.card-prdct svg{
 			position: absolute;
@@ -380,28 +396,29 @@
 			transform:scale(1.05);
 		}
 		.card-prdct:hover p{
-			color:#BA1717;
-		}
+			color: #FFF;
+    			background: #333334;		
+    		}
 		.card-prdct:hover svg line.right {
-			-webkit-transform: translateY(-245px);
-   	 		transform: translateY(-245px);
+			-webkit-transform: translateY(-15.3125rem);
+   	 		transform: translateY(-15.3125rem);
 			transition-duration:0.1s;
 		}
 		.card-prdct:hover svg line.top {
-    			-webkit-transform: translateX(-314px);
-    			transform: translateX(-314px);
+    			-webkit-transform: translateX(-19.625rem);
+    			transform: translateX(-19.625rem);
     			transition-duration:0.1s;
     			transition-delay:0.1s;
 		}
 		.card-prdct:hover svg line.left {
-    			-webkit-transform: translateY(183px);
-    			transform: translateY(183px);
+    			-webkit-transform: translateY(11.4375rem);
+    			transform: translateY(11.4375rem);
     			transition-duration:0.1s;
     			transition-delay:0.2s;
 		}
 		.card-prdct:hover svg line.diag{
-			-webkit-transform:translateX(120px) translateY(27px);;
-			transform: translateX(120px) translateY(27px);
+			-webkit-transform:translateX(7.5rem) translateY(1.6875rem);
+			transform: translateX(7.5rem) translateY(1.6875rem);
 			transition-duration:0.1s;
     			transition-delay:0.3s;
 		}
@@ -437,9 +454,16 @@
 			font-size: 3em;
 			margin-top: -5px;
 		}
+		.footer-b{
+			padding-bottom: 2em;
+		}
 		.footer-b p{
 			text-transform: uppercase;
 			font-weight: bold;
+		}
+		.footer-info{
+			margin-left: 2em;
+			font-size:1.0em;
 		}
 		.list-rs ul{
 			list-style: none;
@@ -485,16 +509,196 @@
 	    		margin-top: -3px;
 		}
 
+/* *!**!**!**!**!* Stylisation de la Page Boutique *!**!**!**!**!* */
+	.shop{
+    		background-image: url(../img/boutique/top-bgtest.png);
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		width: 100%;
+    		height: 68vh;
+		top: -3%;
+    		position: absolute;
+	}
+	.shop-topbar{
+		position: relative;
+    		top: 18%;
+    		width: 100%;
+    		height: 48vh;
+    		z-index: 1;
+	}
+	.shop-topbar p{
+		display: block;
+    		position: absolute;
+    		top: 15%;
+    		left: 4%;
+    		font-size: 1.3em;
+	}
+	.shop-topbar form{
+		position: absolute;
+		top: 33%;
+    		left: 4%;
+    		display: inline-block;
+	}
+	.shop-topbar input[type='search']{
+		margin-right: 7rem;
+		padding: 0.5em 1em;
+    		width: 17rem;
+    		display: inline-block;
+    		color:#333334;
+	}
+	.shop-topbar input[type='search']::-webkit-input-placeholder{
+		color: #333334;
+	}
+	.shop-topbar input[type='search']:focus{
+		border: 1px solid #BA1717;
+    		background-color: #FFF;
+    		box-shadow: 0 0 5px #1f1f1f;
+	}
+	.shop-topbar .trier{
+		width: 8rem;
+		margin-right: 2rem;
+	}
+	.shop-topbar .prod{
+	   	width: 11rem;
+	   	margin-right:2rem;
+	}	
+	.shop-topbar .type{
+	   	width: 11rem;
+	}
+	.shop-left{
+		z-index: -1;
+    		background: #cccccc;
+    		height: 110rem;    		
+    		position: absolute;
+    		left: 0;
+    		top: 1rem;
+    		padding-top: 22rem;
+	}
+	.shop-left li{
+		margin-bottom: 1.5em;
+		background: #333334;
+    		padding: 0.8rem 0 0.7em;
+    		text-align: center;
+    		cursor: pointer;	
+    		transition: all ease 0.5s;
+	}
+	.shop-left li a{
+		text-transform: uppercase;
+    		color: #FFF;
+   		font-weight: bold;
+   		transform: scale(1);
+   		transition: all ease 0.5s;
+	}
+	.shop-left-active{
+		background: #BA1717!important;
+		transform: scale(1.2);
+	}
+	.list-product{
+		position: absolute;
+    		right: 0;
+    		margin-top: 2.7rem;
+    		height: auto; 
+	}
+	.shop-footer{
+		display: block;
+    		position: absolute;
+    		bottom: -90rem;
+    		right: 0rem;
+    		width: 100%;
+	}
+	/* ************* Shop-Card + SVG ************* */
+		.shop-card{
+			display: block;
+		    	position: relative;
+		    	cursor: pointer;
+			transition: all ease 0.6s;
+		    	transform:scale(1);
+		}
+		.shop-card img{
+			width:100%;
+			margin:0 auto 1em;
+			display: block;
+		}
+		.shop-card p{
+			text-transform: uppercase;
+	    		font-weight: bold;
+	    		font-size: 0.95em;
+	    		margin: 0em;
+	    		color: #333334;
+	    		transition: all ease 0.6s;
+		}
+		.shop-card svg{
+			position: absolute;
+		    	top: 0;
+		    	left: 0;
+		}
+		.shop-card svg:not(:root) {
+		    	overflow: hidden;
+		}
+		.shop-card  svg line {
+		    	stroke-width: 3;
+		    	fill: none;
+		    	-webkit-transition: all ease 0.6s;
+		    	transition: all ease 0.6s;
+		}
+		.shop-card  svg line.shop-right, 
+		.shop-card  svg line.shop-bottom,
+		.shop-card  svg line.shop-left, 
+		.shop-card  svg line.shop-top,
+		.shop-card  svg line.shop-diag {
+			stroke:#BA1717;
+		}
+		.shop-card svg line.shop-top,
+		.shop-card svg line.shop-bottom {
+			stroke-dashoffset:0;
+		}
+		.shop-card svg line.shop-left,
+		.shop-card svg line.shop-right {
+			stroke-dasharray: 490 400;
+		}
+		.shop-card:hover{
+			transform:scale(1.05);
+		}
+		.shop-card:hover p{
+			color: #333334;	
+
+	    	}
+		.shop-card:hover svg line.shop-right {
+			-webkit-transform: translateY(-15.3125rem);
+	   	 	transform: translateY(-15.3125rem);
+			transition-duration:0.1s;
+		}
+		.shop-card:hover svg line.shop-top {
+	   	 	-webkit-transform: translateX(-15rem);
+	    		transform: translateX(-15rem); 
+	    		transition-duration:0.1s ;
+	    		transition-delay:0.1s
+		}
+		.shop-card:hover svg line.shop-left {
+	    		-webkit-transform: translateY(8.75rem);
+	    		transform: translateY(8.75rem);
+	    		transition-duration: 0.1s;
+	    		transition-delay: 0.2s;
+		}
+		.shop-card:hover svg line.shop-diag{
+			-webkit-transform:translateX(7.5rem) translateY(1.6875rem);
+			transform: translateX(7.5rem) translateY(1.6875rem);
+			transition-duration:0.1s;
+	    		transition-delay:0.3s;
+		}
+
+/* *!**!**!**!**!* Stylisation de la Page Galerie *!**!**!**!**!* */
+
 /* *!**!**!**!**!* Stylisation de la Page Contact *!**!**!**!**!* */
 	.contact{
-		height:auto;
+		height:81vh;
 		display: block;
 	}
 	.contact h3{
 		font-family: 'Helvetica Neue LT Std'!important;
 		text-transform: uppercase;
     		margin-top: 1em;
-    		padding-left: 2em;
+    		padding-left: 16rem;
     		padding-bottom: 0.5em;
     		border-bottom: 2px solid #BA1717;
 	}
@@ -502,7 +706,7 @@
 		width: 60%;
 		display: block;
 		margin:1em auto;
-		font-size: 1.5em;
+		font-size: 1.2em;
 		font-style: normal;
 		font-weight:normal;
 	}
@@ -524,7 +728,8 @@
 		font-weight: bold;
 		padding-top: 14px;
 		padding-left: 15px;
-    		font-size: 1.3em;
+    		font-size: 1em;
+    		margin-bottom: 2.65rem;
 	}
 	.contact-right{
     		display: inline-block;
@@ -543,7 +748,7 @@
 		text-transform: uppercase;
 		padding-top: 14px;
 		padding-left: 15px;
-    		font-size: 1.3em;
+    		font-size: 1em;
 	}
 	.contact-right button{
 		width: 100%;
@@ -551,8 +756,16 @@
     		padding: 17px;
     		margin-top: -14px;
     		color: #FFF;
+    		cursor:pointer;
     		text-transform: uppercase;
     		font-weight: bold;
     		font-size: 1.2em;
     		font-family: 'Helvetica Neue LT Std'!important;
+    		transform: : scale(1);
+    		transition: all ease 0.5s;
+	}
+	.contact-right button:hover{
+		color: #FFF!important;
+    		transform: scale(1.01);
+    		box-shadow: 3px 3px 8px #6d6d6d;
 	}
