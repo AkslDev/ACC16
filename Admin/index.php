@@ -16,6 +16,7 @@ if (!isset($_SESSION['infos_user']['token'])) {
 		<!-- Liens vers mes CSS -->
 		<link type="text/css" rel="stylesheet" href="css/materialize.css"/>
 		<link type="text/css" rel="stylesheet" href="css/styles.css"/>
+		<script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
 
 	</head>
 	<body>
@@ -70,7 +71,6 @@ if (!isset($_SESSION['infos_user']['token'])) {
 				</div>
   				<?php } ?>
 		  	</section>
-
 		  	<section class="photos" id="photos" style="display: none;">
 		  		<h3>Photos</h3>
 		  		<a class="waves-effect waves-light btn add_photo" id="add_photo">Ajouter une Photo</a>
@@ -125,31 +125,148 @@ if (!isset($_SESSION['infos_user']['token'])) {
       					</div>
       				</div>
       				<div class="photo_add" id="photo_add" style="display:none;">
-                <a href="#" class="close_card" id="close_card">
-                  <i class="material-icons">close</i>
-                </a>
+               				 <a href="#" class="close_card" id="close_card">
+               				   <i class="material-icons">close</i>
+               				 </a>
       					<div class="card_add-photo">
       						<h4 class="photo_name">Ajouter une photo</h4>
     							<div class="file-field input-field file-photo">
-      								<div class="btn">
-        									<span>Photo</span>
-       									 <input type="file">
-      								</div>
-      								<div class="file-path-wrapper">
-       					 				<input class="file-path validate" type="text">
-      								</div>
+      							<div class="btn">
+        								<span>Photo</span>
+       								<input type="file">
+      							</div>
+      							<div class="file-path-wrapper">
+       						 		<input class="file-path validate" type="text">
+      							</div>
     							</div>
-        							<div class="input-field description-photo">
-         								<textarea id="textarea1" class="materialize-textarea"></textarea>
-         	 							<label for="textarea1">Description de la Photo</label>
-        							</div>
+        						<div class="input-field description-photo">
+         							<textarea id="textarea1" class="materialize-textarea"></textarea>
+         	 						<label for="textarea1">Description de la Photo</label>
+        						</div>
         							<button class="waves-effect waves-light btn" id="submit_photo" >Ajouter</button>
       					</div>
       				</div>
 		  	</section>
 		  	<section class="produits" id="produits" style="display: none;">
 		  		<h3>Produits</h3>
-				<a class="waves-effect waves-light btn add_photo" id="add_photo">Ajouter un Produit</a>
+				<a class="waves-effect waves-light btn add_product" id="add_product">Ajouter un Produit</a>
+				<table class="bordered highlight centered">
+        					<thead>
+          						<tr>	
+          						    	<th data-field="produitsname">Nom</th>
+          						    	<th data-field="produitsprix">Prix</th>
+          						    	<th data-field="produitsdispo">Disponibilité</th>
+          						    	<th data-field="produitscategories">Catégories</th>
+          						    	<th data-field="action">Action</th>
+          						</tr>
+       		 			</thead>
+        					<tbody>
+          						<tr>
+          						  	<td>Retro P45TGD3</td>
+          						  	<td>390,00</td>
+          						  	<td width="10px" height="20px" class="red"></td>
+          						  	<td>Accesoires Exterieurs</td>
+          						  	<td>
+          						  		<a href="#" class="view_product">
+          						  			<i class="material-icons">remove_red_eye</i>
+          						  		</a>
+          						  		<a href="#" class="edit_product">
+          						  			<i class="material-icons">mode_edit</i>
+          						  		</a>
+  		          						<a href="#" class="delete">
+          						  			<i class="material-icons">delete</i>
+          						  		</a>
+          						  	</td>
+          						</tr>
+          						<tr>
+          						  	<td>Barre de toit XD43-V</td>
+          						  	<td>790,00</td>
+          						  	<td width="20px" height="20px" class="green"></td>
+          						  	<td>Toit</td>
+          						  	<td>
+          						  		<a href="#" class="view_product">
+          						  			<i class="material-icons">remove_red_eye</i>
+          						  		</a>
+          						  		<a href="#" class="edit_product">
+          						  			<i class="material-icons">mode_edit</i>
+          						  		</a>
+  		          						<a href="#" class="delete">
+          						  			<i class="material-icons">delete</i>
+          						  		</a>
+          						  	</td>
+          						</tr>
+	        				</tbody>
+	      			</table>
+      				<div class="product_add" id="product_add" style="display:none;">
+               				<a href="#" class="close_card" id="close_card">
+               				  	<i class="material-icons">close</i>
+               				</a>
+      					<div class="card_add-product" align="center">
+      						<h4 class="product_name">Ajouter un Produit</h4>
+      						<div class="input-field col s8">
+      							<div class="switch">
+    								<label>
+      									Indisponible
+      									<input type="checkbox">
+      									<span class="lever"></span>
+      									Disponible
+    								</label>
+ 	 						</div>
+          							<input placeholder="Nom du produit" id="product_name" type="text" class="validate">
+          							<textarea name="editor1" id="editor1" rows="10" cols="100">Description de l'article
+            						</textarea>
+            						<script>
+                							CKEDITOR.replace( 'editor1' );
+            						</script>
+ 	 						<input placeholder="Prix du produit" id="product_price" type="number" class="validate">
+ 	 						<div class="input-field col s12">
+    								<select>
+      									<option value="" disabled selected>Catégorie du produit</option>
+      									<option value="1">Option 1</option>
+      									<option value="2">Option 2</option>
+      									<option value="3">Option 3</option>
+    								</select>
+  							</div>
+  							<button class="waves-effect waves-light btn" id="submit_product" >Ajouter</button>
+       		 				</div>
+      					</div>
+      				</div>
+      				<div class="product_edit" id="product_edit" style="display:none;">
+      				           <a href="#" class="close_card" id="close_card">
+               				  	<i class="material-icons">close</i>
+                				<a href="#" class="close_card" id="close_card">
+               				  	<i class="material-icons">close</i>
+               				</a>              				
+      					<div class="card_edit-product" align="center">
+      						<h4 class="product_name">Modifier</h4>
+      						<div class="input-field col s8">
+      							<div class="switch">
+    								<label>
+      									Indisponible
+      									<input type="checkbox">
+      									<span class="lever"></span>
+      									Disponible
+    								</label>
+ 	 						</div>
+          							<input placeholder="Nom du produit" id="product_name" type="text" class="validate">
+          							<textarea name="editor2" id="editor2" rows="10" cols="100">Description de l'article
+            						</textarea>
+            						<script>
+                							CKEDITOR.replace( 'editor2' );
+            						</script>
+ 	 						<input placeholder="Prix du produit" id="product_price" type="number" class="validate">
+ 	 						<div class="input-field col s12">
+    								<select>
+      									<option value="" disabled selected>Catégorie du produit</option>
+      									<option value="1">Option 1</option>
+      									<option value="2">Option 2</option>
+      									<option value="3">Option 3</option>
+    								</select>
+  							</div>
+  							<button class="waves-effect waves-light btn" id="submit_product" >Ajouter</button>
+       		 				</div>
+      					</div>
+      				</div>
 		  	</section>
 		  	<section class="commandes" id="commandes" style="display: none;">
 		  		<h3>Commandes (<span id="counters"></span>)</h3>
@@ -328,6 +445,7 @@ if (!isset($_SESSION['infos_user']['token'])) {
     	<script type="text/javascript" src="js/api_users.js"></script>
     	<script type="text/javascript" src="js/api_commandes.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	
     	<script>gestions_commandes();</script>
 	</body>
 </html>

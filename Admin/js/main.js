@@ -1,3 +1,14 @@
+	function close(){
+		$('#view_users').css('display','none');
+		$('.loader').css('display', 'block');
+		$('.more_info').css('display', 'none');
+		$('#view-command').css('display','none');
+		$('#photo_viewer').css('display','none');
+		$('#photo_add').css('display','none');
+		$('#product_add').css('display','none');
+		$('#product_edit').css('display', 'none');
+	}
+
 	$(document).ready(function(){
 		let pos = localStorage.getItem('position');
 		if (pos != "undefined") {
@@ -9,7 +20,7 @@
 			    gestions_photos();
 			    break;
 			  case "produits":
-			    gestions_produits();
+			    // gestions_produits();
 			    break;
 			  case "commandes":
 			    // gestions_commandes();
@@ -70,7 +81,23 @@
 		$('#'+res[1]).css('display','block');
 		localStorage.setItem('position', res[1]);
 	});
+	// Section Produits 
+		// Voir le Produit
+			$('.view_produit').on('click', function(){
+				// alert('test');
+				$('#photo_viewer').css('display', 'block')
+			});
 
+		// Ajouter un Produit
+			$('#add_product').on('click', function(){
+				// alert('test');
+				$('.product_add').css('display', 'block');
+			});
+
+			$('#submit_product').on('click', function(){
+				$('.product_add').css('display','none');
+				Materialize.toast('Produit ajouté', 4000);
+			});
 	// Section Photos 
 		// Voir la photo
 			$('.view_photo').on('click', function(){
@@ -95,20 +122,16 @@
 				// alert('test');
 				$('#view-command').css('display', 'block')
 			});
-			
-	// Section Utilisateurs
-		
-		
-		// Modifier/Supprimer
-		$('.edit').on('click', function(){
-			alert('test');
-		});
-		$('#modal-delete_user').modal();
+				
+	// Modifier/Supprimer
+	$('.edit_product').on('click', function(){
+		$('#product_edit').css('display', 'block');
+	});
+	$('#modal-delete_user').modal();
 
 
 	// BOUTON CLOSE / FERME FENETRE
 	$('.close_card').on('click', function(){
-		// alert('test');
 		close();
 	});
 	$( ".preview" ).keypress(function( event ) {
@@ -117,12 +140,4 @@
 	  }
 	});
 	 
-	function close(){
-		$('#view_users').css('display','none');
-		$('.loader').css('display', 'block');
-		$('.more_info').css('display', 'none');
-		$('#view-command').css('display','none');
-		$('#photo_viewer').css('display','none');
-		$('#photo_add').css('display','none');
-	}
 
