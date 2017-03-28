@@ -156,7 +156,7 @@ if (!isset($_SESSION['infos_user']['token'])) {
 		  		<table class="bordered highlight centered">
 		        			<thead>
 		          				<tr>
-		          				    	<th data-field="id">N° de Commande</th>
+		          				    	<th data-field="id">N° Commande</th>
 		          				    	<th data-field="date">Date</th>
 		          				    	<th data-field="products">Produits</th>
                             <th data-field="payment">Moyens de paiement</th>
@@ -171,7 +171,17 @@ if (!isset($_SESSION['infos_user']['token'])) {
 		          				  	<td class="commande_date">07/02/2017</td>
                           <td class="commande_produit">Poignée P12FD45</td>
                           <td class="commande_tracking">0V8DZ323O983</td>
-		          				  	<td class="commande_status">En attente de probation</td>
+		          				  	<td class="commande_status">
+                            <div class="input-field col s12">
+                              <select>
+                                <option value="none" disabled>Status de la commande :</option>
+                                <option value="0">En attente de probation...</option>
+                                <option value="1">Commande validé, en attente de paiement...</option>
+                                <option value="2">Paiement validé, envoi de la commande en cours...</option>
+                                <option value="3">Paiment reçu, colis reçu...</option>
+                              </select>
+                            </div>
+                          </td>
 		          				  	<td class="commande_paiement">Paypal</td>
           						  	<td>
           						  		<a href="#" class="view_command">

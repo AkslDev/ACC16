@@ -321,3 +321,21 @@ section#home {
 	    width: 14rem;
 	}
 
+	.commande_status input,
+	.dropdown-content li > a, .dropdown-content li > span,
+	.select-dropdown li.disabled,
+	.select-dropdown li{
+		color: #2E2E2E!important;
+	}
+	
+	.select-dropdown li.disabled{
+		opacity: 0.7;
+	}
+
+	.input-field {
+	    position: relative;
+	    margin-top: 1rem;
+        width: 20.3rem;
+    	margin-right: 2.5rem;
+	}
+	
