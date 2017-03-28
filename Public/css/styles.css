@@ -785,8 +785,8 @@
 		.shop-card  svg line {
 		    	stroke-width: 3;
 		    	fill: none;
-		    	-webkit-transition: all ease-out 0.2s;
-		    	transition: all ease-out 0.2s;
+		    	-webkit-transition: all ease-in-out 0.2s;
+		    	transition: all ease-in-out 0.2s;
 		}
 		.shop-card  svg line.shop-right, 
 		.shop-card  svg line.shop-bottom,
