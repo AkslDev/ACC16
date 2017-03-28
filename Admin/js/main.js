@@ -108,11 +108,20 @@
 	// BOUTON CLOSE / FERME FENETRE
 	$('.close_card').on('click', function(){
 		// alert('test');
+		close();
+	});
+	$( ".preview" ).keypress(function( event ) {
+	  if ( event.which == 27 ) {
+	     close();
+	  }
+	});
+	 
+	function close(){
 		$('#view_users').css('display','none');
 		$('.loader').css('display', 'block');
 		$('.more_info').css('display', 'none');
 		$('#view-command').css('display','none');
 		$('#photo_viewer').css('display','none');
 		$('#photo_add').css('display','none');
-	});
+	}
 

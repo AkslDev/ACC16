@@ -40,7 +40,7 @@ if (!isset($_SESSION['infos_user']['token'])) {
 		    		<a href="#!" ><i class="material-icons">dashboard</i>Produits</a>
 	    		</li>
 		    	<li id="btn_commandes">
-		    		<a href="#!"><i class="material-icons">shopping_basket</i>Commandes</a>
+		    		<a href="#!"><i class="material-icons">shopping_basket</i>Commandes <span id="nb_probas" class="new badge red">4</span></a>
 	    		</li>
 		    	<li id="btn_users">
 		    		<a class="waves-effect" href="#!"><i class="material-icons">supervisor_account</i>Utilisateurs</a>
@@ -152,46 +152,30 @@ if (!isset($_SESSION['infos_user']['token'])) {
 		  		<h3>Produits</h3>
 		  	</section>
 		  	<section class="commandes" id="commandes" style="display: none;">
-		  		<h3>Commandes</h3>
+		  		<h3>Commandes (<span id="counters"></span>)</h3>
 		  		<table class="bordered highlight centered">
 		        			<thead>
 		          				<tr>
 		          				    	<th data-field="id">N° de Commande</th>
 		          				    	<th data-field="date">Date</th>
 		          				    	<th data-field="products">Produits</th>
-		          				    	<th data-field="payment">Moyens de paiement</th>
+                            <th data-field="payment">Moyens de paiement</th>
+		          				    	<th data-field="status">Status</th>
+                            <th data-field="token">N° Tracking</th>
 		          				    	<th data-field="action">Actions</th>
 		          				</tr>
 		       		 	</thead>
-		        			<tbody>
-		        				<tr>      
-		          				  	<td>302</td>
-		          				  	<td>07/02/2017</td>
-		          				  	<td>Poignée P12FD45</td>
-		          				  	<td>Paypal</td>
+		        			<tbody class="alls_commandes">
+		        				<tr class="commande">      
+		          				  	<td class="commande_id">302</td>
+		          				  	<td class="commande_date">07/02/2017</td>
+                          <td class="commande_produit">Poignée P12FD45</td>
+                          <td class="commande_tracking">0V8DZ323O983</td>
+		          				  	<td class="commande_status">En attente de probation</td>
+		          				  	<td class="commande_paiement">Paypal</td>
           						  	<td>
           						  		<a href="#" class="view_command">
           						  			<i class="material-icons">remove_red_eye</i>
-          						  		</a>
-          						  		<a href="#" class="edit">
-          						  			<i class="material-icons">mode_edit</i>
-          						  		</a>
-  		          						<a href="#" class="delete">
-          						  			<i class="material-icons">delete</i>
-          						  		</a>
-          						  	</td>
-		          				</tr>
-		          				<tr>
-		          				  	<td>243</td>
-		          				  	<td>02/01/2017</td>
-		          				  	<td>Autoradio X15Z23</td>
-		          				  	<td>MasterCard</td>
-          						  	<td>
-          						  		<a href="#" class="view_command">
-          						  			<i class="material-icons">remove_red_eye</i>
-          						  		</a>
-          						  		<a href="#" class="edit">
-          						  			<i class="material-icons">mode_edit</i>
           						  		</a>
   		          						<a href="#" class="delete">
           						  			<i class="material-icons">delete</i>
@@ -302,10 +286,6 @@ if (!isset($_SESSION['infos_user']['token'])) {
                         <i class="material-icons">child_friendly</i>
                         Date de naissance: <span class="date_content" id="date_content">02/10/1982</span>
                       </p>
-                      <p class="card_last-command" id="card_last-command">
-                       <i class="material-icons">date_range</i>
-                        Derniere commande: <span>07/02/2017 // @TODO</span>
-                      </p>
                       <table class="bordered highlight centered">
                           <thead>
                               <tr>
@@ -313,21 +293,17 @@ if (!isset($_SESSION['infos_user']['token'])) {
                                     <th data-field="date">Date</th>
                                     <th data-field="products">Produits</th>
                                     <th data-field="payment">Moyens de paiement</th>
+                                    <th data-field="tracking">N° Tracking</th>
                               </tr>
                         </thead>
-                          <tbody>
-                            <tr>
-                                  <td>302</td>
-                                  <td>07/02/2017</td>
-                                  <td>Poignée P12FD45</td>
-                                  <td>Paypal</td>
-                              </tr>
-                              <tr>
-                                  <td>243</td>
-                                  <td>02/01/2017</td>
-                                  <td>Autoradio X15Z23</td>
-                                  <td>MasterCard</td>
-                              </tr>
+                          <tbody class="last_command_user">
+                            <tr class="card">
+                                <td class="command_id">302</td>
+                                <td class="command_date">07/02/2017</td>
+                                <td class="command_produit">Poignée P12FD45</td>
+                                <td class="command_paiement">Paypal</td>
+                                <td class="command_tracking">0GV9432894</td>
+                            </tr>
                           </tbody>
                       </table>
                     </div>
@@ -340,6 +316,8 @@ if (!isset($_SESSION['infos_user']['token'])) {
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="js/materialize.js"></script>
     <script type="text/javascript" src="js/api_users.js"></script>
+    <script type="text/javascript" src="js/api_commandes.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
+    <script>gestions_commandes();</script>
 	</body>
 	</html>
