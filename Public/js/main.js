@@ -1,9 +1,10 @@
 	// DropDown Barre de Navigation 
 	$('.drop').mouseenter(function(){
-		$( "#drop-connect" ).css("display","block");
+		$( "#drop-connect" ).slideDown();
+
 	});
 	$('.drop').mouseleave(function(){
-		$( "#drop-connect" ).css("display","none");
+		$( "#drop-connect" ).slideUp();
 	});
 
 	// Gestion du Chiffre sur le Bouton Panier dans la Nav
