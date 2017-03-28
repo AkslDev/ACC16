@@ -12,7 +12,7 @@
 			    gestions_produits();
 			    break;
 			  case "commandes":
-			    gestions_commandes();
+			    // gestions_commandes();
 			    break;
 			  case "users":
 			    gestions_users();
@@ -23,6 +23,7 @@
 			}
 		}
 	});
+        
 
 
 	$('.button-collapse').sideNav({
