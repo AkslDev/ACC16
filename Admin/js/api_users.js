@@ -13,7 +13,7 @@
 	function gestions_users(){
 			let token;
 			if (under_work != true) {
-					$.ajax("php/get_info_users.php").done(function(response){
+				$.ajax("php/get_info_users.php").done(function(response){
 		      		let 	$list_card = $('#users_lists'),
 							$card 	= $list_card.children('#card_user').detach();
 

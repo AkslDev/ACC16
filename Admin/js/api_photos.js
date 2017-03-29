@@ -1,31 +1,7 @@
-let under_works = false;
-let counts = 0;
-let nb_probas = 0;
-
-function detect_options(id, value){
-	let status = 0;
-	switch (value) {
-	  case "Status de la commande :":
-	    // Nothing
-	    break;
-	  case "En attente de probation...":
-	    status = 0;
-	    break;
-	  case "Commande validé, en attente de paiement...":
-	    status = 1;
-	    break;
-	  case "Paiement validé, envoi de la commande en cours...":
-	    status = 2;
-	    break;
-	  case "Paiment reçu, colis reçu...":
-	    status = 3;
-	    break;
-	}
-	console.log("id : " + id + " status : " + status);
-}
+let under_pictures = false;
 
 function gestions_commandes() {
-			if (under_works != true) {
+			if (under_pictures != true) {
 						$.ajax("php/get_commande.php").done(function(response){
 		      		let 	$list_card = $('.alls_commandes'),
 							$card 	= $list_card.children('.commande').detach();
@@ -75,7 +51,7 @@ function gestions_commandes() {
 							$('paiement').text();
 						});
 					});
-					under_works = true;
+					under_pictures = true;
 					$('select').material_select();
 				});
 		}

@@ -160,29 +160,12 @@ if (!isset($_SESSION['infos_user']['token'])) {
           						    	<th data-field="action">Action</th>
           						</tr>
        		 			</thead>
-        					<tbody>
-          						<tr>
-          						  	<td>Retro P45TGD3</td>
-          						  	<td>390,00</td>
-          						  	<td width="10px" height="20px" class="red"></td>
-          						  	<td>Accesoires Exterieurs</td>
-          						  	<td>
-          						  		<a href="#" class="view_product">
-          						  			<i class="material-icons">remove_red_eye</i>
-          						  		</a>
-          						  		<a href="#" class="edit_product">
-          						  			<i class="material-icons">mode_edit</i>
-          						  		</a>
-  		          						<a href="#" class="delete">
-          						  			<i class="material-icons">delete</i>
-          						  		</a>
-          						  	</td>
-          						</tr>
-          						<tr>
-          						  	<td>Barre de toit XD43-V</td>
-          						  	<td>790,00</td>
-          						  	<td width="20px" height="20px" class="green"></td>
-          						  	<td>Toit</td>
+        					<tbody class="alls_produits">
+          						<tr class="produit">
+          						  	<td class="produit-item">Retro P45TGD3</td>
+          						  	<td class="produit-prix">390,00</td>
+          						  	<td class="produit-dispo red" id="produit-dispo" width="10px" height="20px"></td>
+          						  	<td class="produit-categorie">Accesoires Exterieurs</td>
           						  	<td>
           						  		<a href="#" class="view_product">
           						  			<i class="material-icons">remove_red_eye</i>
@@ -337,6 +320,38 @@ if (!isset($_SESSION['infos_user']['token'])) {
 			          						<td>Validé</td>
 			          						<td>CB</td>
 			          					</tr>
+	                          					<tr>
+			          						<td>coquin</td>
+			          						<td>Axel</td>
+			          						<td>40 Rue Lavoisier 95330</td>
+			          						<td>Poignée P12FD45</td>
+			          						<td>Validé</td>
+			          						<td>CB</td>
+	                          					</tr>
+	                          					<tr>
+			          						<td>coquin</td>
+			          						<td>Axel</td>
+			          						<td>40 Rue Lavoisier 95330</td>
+			          						<td>Poignée P12FD45</td>
+			          						<td>Validé</td>
+			          						<td>CB</td>
+	                          					</tr>
+	                          					<tr>
+			          						<td>coquin</td>
+			          						<td>Axel</td>
+			          						<td>40 Rue Lavoisier 95330</td>
+			          						<td>Poignée P12FD45</td>
+			          						<td>Validé</td>
+			          						<td>CB</td>
+	                          					</tr>
+	                          					<tr>
+			          						<td>coquin</td>
+			          						<td>Axel</td>
+			          						<td>40 Rue Lavoisier 95330</td>
+			          						<td>Poignée P12FD45</td>
+			          						<td>Validé</td>
+			          						<td>CB</td>
+	                          					</tr>
 			        				</tbody>
 			      			</table>
 	      				</div>
@@ -442,6 +457,8 @@ if (!isset($_SESSION['infos_user']['token'])) {
 	<script type="text/javascript" src="js/materialize.js"></script>
     	<script type="text/javascript" src="js/api_users.js"></script>
     	<script type="text/javascript" src="js/api_commandes.js"></script>
+    	<script type="text/javascript" src="js/api_products.js"></script>
+    	<script type="text/javascript" src="js/api_photos.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	
     	<script>gestions_commandes();</script>

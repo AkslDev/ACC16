@@ -21,7 +21,7 @@
 			    gestions_photos();
 			    break;
 			  case "produits":
-			    gestions_produits();
+			    gestions_products();
 			    break;
 			  case "commandes":
 			    // gestions_commandes();
