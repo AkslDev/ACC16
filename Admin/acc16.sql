@@ -7,12 +7,13 @@ CREATE DATABASE `acc16`;
 
 use `acc16`;
 
+
 -- phpMyAdmin SQL Dump
 -- version 4.5.2
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 28 Mars 2017 à 22:45
+-- Généré le :  Mer 29 Mars 2017 à 03:14
 -- Version du serveur :  10.1.16-MariaDB
 -- Version de PHP :  7.0.9
 
@@ -84,6 +85,40 @@ INSERT INTO `commande` (`id`, `date_commande`, `produit_commande`, `moyen_paieme
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `galerie`
+--
+
+CREATE TABLE `galerie` (
+  `id` int(11) NOT NULL,
+  `nom_img` varchar(255) NOT NULL,
+  `url_img` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `galerie`
+--
+
+INSERT INTO `galerie` (`id`, `nom_img`, `url_img`) VALUES
+(1, 'Image 1', 'img/galerie/image-1.png'),
+(2, 'Image 2', 'img/galerie/image-2.png'),
+(3, 'Image 3', 'img/galerie/image-3.png'),
+(4, 'Image 4', 'img/galerie/image-4.png'),
+(5, 'Image 5 ', 'img/galerie/image-5.png'),
+(6, 'Image 6 ', 'img/galerie/image-6.png'),
+(7, 'Image 7 ', 'img/galerie/image-7.png'),
+(8, 'Image 8 ', 'img/galerie/image-8.png'),
+(9, 'Image 9 ', 'img/galerie/image-9.png'),
+(10, 'Image 10', 'img/galerie/image-10.png'),
+(11, 'Image 11', 'img/galerie/image-11.png'),
+(12, 'Image 12', 'img/galerie/image-12.png'),
+(13, 'Image 13', 'img/galerie/image-13.png'),
+(14, 'Image 14', 'img/galerie/image-14.png'),
+(15, 'Image 15 ', 'img/galerie/image-15.png'),
+(16, 'Image 16', 'img/galerie/image-16.png');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `membre`
 --
 
@@ -104,14 +139,7 @@ CREATE TABLE `membre` (
 --
 
 INSERT INTO `membre` (`id`, `first_name`, `second_name`, `email`, `pass`, `phone`, `adress`, `birthday`, `token`) VALUES
-(179, 'bhbyb', 'rejlu', 'ykcknakcfi', '', '00000000', 'fjudzjduz', '7Y73723', '97b42b6b47cda8954e8ab82f8f6e717d1b8aca2b'),
-(180, 'kuprl', 'blbbl', 'eaymeidtsh', '', '00000000', 'fjudzjduz', '7Y73723', '07cd775baf07111c5d1c24a8b69ac091ae2b9623'),
-(181, 'ymubr', 'bvuuc', 'luprjlgfpr', '', '00000000', 'fjudzjduz', '7Y73723', '68e79bc0eeb94d57863d7fbb781979e20cfd5a33'),
-(182, 'casah', 'mufsb', 'pulrlstrps', '', '00000000', 'fjudzjduz', '7Y73723', '50f4c0803762ce5beb22c4ef57d6ea3ab1ac0549'),
-(183, 'qwxkh', 'sbatk', 'lindrxwplw', '', '00000000', 'fjudzjduz', '7Y73723', '69f4305a1626719308358f85371ecbf7df23967e'),
-(184, 'nrjsp', 'fkxsi', 'mqedynbasg', '', '00000000', 'fjudzjduz', '7Y73723', '97cce3c3363580425de7d150481c9ca86049122c'),
-(185, 'walgn', 'gbskk', 'gsdyiscdtk', '', '00000000', 'fjudzjduz', '7Y73723', '09661b1f20b9dc5612e3a19740ae88d512eb3a2e'),
-(186, 'ckpeu', 'lmtwv', 'gdlencxdbk', '', '00000000', 'fjudzjduz', '7Y73723', '35b64cddd962c06eebe15ee10ccac037ff6ffd23');
+(1, 'Pierre', 'Saigot', 'contact@pierre-saigot.com', 'db36b5795047c85cc3bd3718cd53ea4fdae74a9f85cc86a12a3e48e0ac02a0b3', '0659184420', '10 RUE DU MOULIN LE PERRAY EN YVELINES 78610 ', '1999-10-13', '772284f89beb4c9b9956855b9cd3b1cb038293a6');
 
 -- --------------------------------------------------------
 
@@ -125,7 +153,7 @@ CREATE TABLE `produit` (
   `prix` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `commentaire` varchar(255) NOT NULL
+  `description` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -142,6 +170,12 @@ ALTER TABLE `admin`
 -- Index pour la table `commande`
 --
 ALTER TABLE `commande`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `galerie`
+--
+ALTER TABLE `galerie`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -171,10 +205,15 @@ ALTER TABLE `admin`
 ALTER TABLE `commande`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
+-- AUTO_INCREMENT pour la table `galerie`
+--
+ALTER TABLE `galerie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
 -- AUTO_INCREMENT pour la table `membre`
 --
 ALTER TABLE `membre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=187;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `produit`
 --
