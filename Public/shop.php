@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+	<?php require('content_php/php_connexion.php'); ?>
 	<?php require("content_php/head.php") ?>
 <body>
 	<?php require ("content_php/nav.php"); ?>
@@ -28,62 +29,7 @@
 		</div>
 
 		<div class="row">
-			<div class="shop-left large-3">
-				<ul>
-					<li class="shop-left-active" id="btn_prepa" >
-						<a href="#" >Préparations</a>
-					</li>
-					<li  id="btn_console">
-						<a href="#">Console - Tableau de bord</a>
-					</li>
-					<li id="btn_mob">
-						<a href="#" >Mobilier - Aménagement - Cellule</a>
-					</li >
-					<li  id="btn_acc-int">
-						<a href="#">Accessoires Intérieurs</a>
-					</li>
-					<li  id="btn_susp">
-						<a href="#">Suspensions</a>
-					</li>
-					<li id="btn_secu">
-						<a href="#" >Sécurité</a>
-					</li>
-					<li  id="btn_prot">
-						<a href="#">Protections</a>
-					</li>
-					<li  id="btn_toit">
-						<a href="#">Toit - Galerie</a>
-					</li>
-					<li  id="btn_port">
-						<a href="#">Portage</a>
-					</li>
-					<li id="btn_reserv">
-						<a href="#" >Réservoirs</a>
-
-					</li>
-					<li id="btn_sticker">
-						<a href="#" >Sticker</a>
-					</li>
-					<li id="btn_pickup">
-						<a href="#" >Pick-up</a>
-					</li>
-					<li  id="btn_acc-raid">
-						<a href="#">Accessoires - RAID</a>
-					</li>
-					<li  id="btn_gamme-or">
-						<a href="#">Gamme - OFF-ROAD</a>
-					</li>
-					<li  id="btn_gamme-vx">
-						<a href="#">Gamme - Vision-X</a>
-					</li>
-					<li id="btn_gamme-fr">
-						<a href="#" >Gamme - Front Runner</a>
-					</li>
-					<li id="btn_gamme-bm">
-						<a href="#">Gamme - Bearmach</a>
-					</li>
-				</ul>
-			</div>
+			<?php require('content_php/shop_left.php') ?>
 			<div id="list-product" class="list-product large-9" >
 		  		<div class="small-3 large-3" style="display:inline-block; margin-left:3.5rem;">
 				  	<a class="shop-card">
@@ -163,11 +109,11 @@
     								<option value="2">2</option>
     								<option value="3">3</option>
     								<option value="4">4</option>
-   								<option value="5">5</option>
+   									<option value="5">5</option>
     								<option value="6">6</option>
     								<option value="7">7</option>
     								<option value="8">8</option>
-								<option value="9">9</option>
+									<option value="9">9</option>
     								<option value="10">10</option>
   							</select>
 						</label>
@@ -188,6 +134,10 @@
 		if (isset($_GET['produit'])) {
 			echo "<script>$('.shop-left li').removeClass('shop-left-active'); $('#list-product').hide();</script>";
 		};
+		if (isset($_GET['categorie'])){
+			$categ = htmlentities($_GET['categorie']);
+			echo '<script>console.log('.$categ.'); $(".shop-left li").removeClass("shop-left-active");$('.$categ.').addClass("shop-left-active");</script>';
+		}
 	?>
 </body>
 </html>

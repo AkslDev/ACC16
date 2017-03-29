@@ -7,13 +7,12 @@ CREATE DATABASE `acc16`;
 
 use `acc16`;
 
-
 -- phpMyAdmin SQL Dump
 -- version 4.5.2
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 29 Mars 2017 à 03:14
+-- Généré le :  Mer 29 Mars 2017 à 04:16
 -- Version du serveur :  10.1.16-MariaDB
 -- Version de PHP :  7.0.9
 
@@ -53,6 +52,41 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`id`, `email`, `mdp`, `prenom`, `nom`, `pp`, `token`) VALUES
 (1, 'admin@admin.com', 'c3a309d9403f16a12fd81aa5921ab654f345c36071d9a85ca750e0a76a40ce35', 'Pierre', 'Saigot', 'https://cloudinary-a.akamaihd.net/hopwork/image/upload/w_360,h_340,c_thumb,g_auto/hzsf6leoa5all0dw9vms.jpg', '1D53A21E5AAEBDB3'),
 (3, 'sdeslandesonetoo@yahoo.fr', 'c3a309d9403f16a12fd81aa5921ab654f345c36071d9a85ca750e0a76a40ce35', 'Stéphane', 'Deslandes', 'http://www.happyview.fr.s0.frz.io/design/images/bandeau_new/photos/vue-homme.jpg?frz-v398', 'F2E44CBBBC1F9F15');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categ`
+--
+
+CREATE TABLE `categ` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `nom_btn` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `categ`
+--
+
+INSERT INTO `categ` (`id`, `nom`, `nom_btn`) VALUES
+(1, 'Préparations', 'btn_prepa'),
+(2, 'Console - Tableau de bord', 'btn_console'),
+(3, 'Mobilier - Aménagement - Cellule |', 'btn_mob'),
+(4, 'Accessoires Intérieurs |', 'btn_acc_int'),
+(5, 'Suspensions', 'btn_susp'),
+(6, 'Sécurité', 'btn_secu'),
+(7, 'Protections |', 'btn_prot'),
+(8, 'Toit - Galerie |', 'btn_toit'),
+(9, 'Portage |', 'btn_port'),
+(10, 'Réservoirs', 'btn_reserv'),
+(11, 'Sticker', 'btn_sticker'),
+(12, 'Pick-up', 'btn_pickup'),
+(13, 'Accessoires - RAID', 'btn_ac_raid'),
+(14, 'Gamme - OFF-ROAD', 'btn_gamme_or'),
+(15, 'Gamme - Vision-X', 'btn_gamme_vx'),
+(16, 'Gamme - Front Runner', 'btn_gamme_fr'),
+(17, 'Gamme - Bearmach', 'btn_gamme_bm');
 
 -- --------------------------------------------------------
 
@@ -153,8 +187,33 @@ CREATE TABLE `produit` (
   `prix` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `description` longtext NOT NULL
+  `description` longtext NOT NULL,
+  `categories` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `produit`
+--
+
+INSERT INTO `produit` (`id`, `nom_produit`, `prix`, `stock`, `image`, `description`, `categories`) VALUES
+(1, 'Aménagement Frigo/Tiroir/Coffre/Réservoir - Defender 90/110', 2481, 1, 'img/boutique/product/thump/photo2.png', 'Pour exemple ce mobilier réalisé dans le but d''avoir un plancher plat pour pouvoir dormir occasionnellement en rabattant les sièges avant (donc mobilier à hauteur de l''arrêt de charge), de pouvoir s''ouvrir afin de stocker du matériel et d''accueillir notre gamme de réservoir, 47 ou 70L mais également un Frigo CDF35 mais également 2 tiroirs.', 'Mobilier'),
+(2, 'Aménagement Tiroir/Coffre - Defender 90/110', 2088, 1, 'img/boutique/product/thump/photo3.png', 'Pour exemple ce mobilier réalisé dans le but d''avoir un plancher plat pour pouvoir dormir occasionnellement en rabattant les sièges avant (donc mobilier à hauteur de l''arrêt de charge), de pouvoir s''ouvrir afin de stocker du matériel et d''accueillir notre gamme de réservoir, 47 ou 70L mais également un Frigo CDF35 mais également 2 tiroirs.\r\n', 'mobilier'),
+(3, 'Volant Bois ACC16 36 ou 48 cannelures', 295, 1, 'img/boutique/product/thump/photo4.png', 'Ces volants superbement réalisé de diamètre 38 cms utilise uniquement des matériaux de qualité supérieure , du bois de hêtre et de rivets pleins et poli pour un fini de voiture classique.??Nous fournissons ces volants en kit complet avec un moyeu Chrome et le centre avec notre logo noir et chromé. Le kit comprend tous les boulons, écrous et rondelles raccords.??Le 36 cannelures conviendra: \r\n1998 à 2007. Seront également compatibles avec tous les Defender précédents de la date de lancement jusqu''à 1993.\r\n', 'acc-interieurs'),
+(4, 'Housse de sièges - Defender', 295, 1, 'img/boutique/product/thump/photo5.png', 'Redonnez un coup de jeune à votre intérieur avec ces housses de sièges de superbe qualité qui viendront remplacer vos housses abîmées et redonnerons un aspect neuf à votre intérieur??Disponible en 3 couleurs, Gris avec surpiqûre blanche, Noir avec surpiqûre blanche ou enfin Noir avec surpiqûre orange, ??Pour tout les Defender de 1989 à 2007.??Comprends les appuis tête ainsi que rangement au dos.??Similicuir de vinyle souple et lune couche de revêtement en mousse intérieure.\r\n', 'acc-interieur'),
+(5, 'Pare choc - TOYOTA KDJ90-95', 740, 1, 'img/boutique/product/thump/photo11.png', 'Cet accessoire est le résultat d'' une recherche méticuleuse et d''un nouveau design , pour ne pas mentionner les spécifications techniques requises d''un pare-chocs , robuste , une plus grande résistance , angles d'' attaque, prêt pour l''installation d''un treuil .??Déformable en cas de choc violent pour éviter d''endommager le cadre de votre Toyota Land Cruiser 90-95 acier Fe360 peinture texturée??L''installation ne nécessite pas de modification à votre Toyota Land Cruiser , facile à assembler .\r\n', 'protection'),
+(6, 'Pare choc avant - MERCEDES G463 TYPE 1 ', 684, 1, 'img/boutique/product/thump/photo12.png', 'Pare choc avant se reprenant sur les points d''ancrage, support de treuil (Treuil non fourni)\r\n', 'protections'),
+(7, 'Barre de toit - PATROL Y60/Y61\r\n', 139, 1, 'img/boutique/product/thump/photo13.png', 'Barre de toit NISSAN Y60 OU Y61 (Entourer le véhicule) - Acier Zinguage blanc \r\npour les pattes et brides, Aluminium section 60x30mm avec rainure pour mise en place d''écrou ', 'toit'),
+(8, 'Hard top complet - Defender 130', 9850, 1, 'img/boutique/product/thump/photo16.png', 'Un ensemble esthétique, dans la ligne du véhicule, compact, ouvrant sur l''intérieur en option, literie relevable, aménagement intérieur, chauffage, réserve d''eau, isolation, etc...', 'toit'),
+(9, 'Portage - Defender 90/110', 2758, 1, 'img/boutique/product/thump/photo17.png', 'Panneau de remplissage, toit, coté fixe, panneau de fermeture avant et porte arrière (avec système fermeture type ridelle basse Defender, joint, charnière)', 'portage'),
+(10, 'Aménagement Frigo/Tiroir/Coffre/Réservoir - Defender 90/110', 2481, 1, 'img/boutique/product/thump/photo2.png', 'Pour exemple ce mobilier réalisé dans le but d''avoir un plancher plat pour pouvoir dormir occasionnellement en rabattant les sièges avant (donc mobilier à hauteur de l''arrêt de charge), de pouvoir s''ouvrir afin de stocker du matériel et d''accueillir notre gamme de réservoir, 47 ou 70L mais également un Frigo CDF35 mais également 2 tiroirs.', 'Mobilier'),
+(11, 'Aménagement Tiroir/Coffre - Defender 90/110', 2088, 1, 'img/boutique/product/thump/photo3.png', 'Pour exemple ce mobilier réalisé dans le but d''avoir un plancher plat pour pouvoir dormir occasionnellement en rabattant les sièges avant (donc mobilier à hauteur de l''arrêt de charge), de pouvoir s''ouvrir afin de stocker du matériel et d''accueillir notre gamme de réservoir, 47 ou 70L mais également un Frigo CDF35 mais également 2 tiroirs.\r\n', 'mobilier'),
+(12, 'Volant Bois ACC16 36 ou 48 cannelures', 295, 1, 'img/boutique/product/thump/photo4.png', 'Ces volants superbement réalisé de diamètre 38 cms utilise uniquement des matériaux de qualité supérieure , du bois de hêtre et de rivets pleins et poli pour un fini de voiture classique.??Nous fournissons ces volants en kit complet avec un moyeu Chrome et le centre avec notre logo noir et chromé. Le kit comprend tous les boulons, écrous et rondelles raccords.??Le 36 cannelures conviendra: \r\n1998 à 2007. Seront également compatibles avec tous les Defender précédents de la date de lancement jusqu''à 1993.\r\n', 'acc-interieurs'),
+(13, 'Housse de sièges - Defender', 295, 1, 'img/boutique/product/thump/photo5.png', 'Redonnez un coup de jeune à votre intérieur avec ces housses de sièges de superbe qualité qui viendront remplacer vos housses abîmées et redonnerons un aspect neuf à votre intérieur??Disponible en 3 couleurs, Gris avec surpiqûre blanche, Noir avec surpiqûre blanche ou enfin Noir avec surpiqûre orange, ??Pour tout les Defender de 1989 à 2007.??Comprends les appuis tête ainsi que rangement au dos.??Similicuir de vinyle souple et lune couche de revêtement en mousse intérieure.\r\n', 'acc-interieur'),
+(14, 'Pare choc - TOYOTA KDJ90-95', 740, 1, 'img/boutique/product/thump/photo11.png', 'Cet accessoire est le résultat d'' une recherche méticuleuse et d''un nouveau design , pour ne pas mentionner les spécifications techniques requises d''un pare-chocs , robuste , une plus grande résistance , angles d'' attaque, prêt pour l''installation d''un treuil .??Déformable en cas de choc violent pour éviter d''endommager le cadre de votre Toyota Land Cruiser 90-95 acier Fe360 peinture texturée??L''installation ne nécessite pas de modification à votre Toyota Land Cruiser , facile à assembler .\r\n', 'protection'),
+(15, 'Pare choc avant - MERCEDES G463 TYPE 1 ', 684, 1, 'img/boutique/product/thump/photo12.png', 'Pare choc avant se reprenant sur les points d''ancrage, support de treuil (Treuil non fourni)\r\n', 'protections'),
+(16, 'Barre de toit - PATROL Y60/Y61\r\n', 139, 1, 'img/boutique/product/thump/photo13.png', 'Barre de toit NISSAN Y60 OU Y61 (Entourer le véhicule) - Acier Zinguage blanc \r\npour les pattes et brides, Aluminium section 60x30mm avec rainure pour mise en place d''écrou ', 'toit'),
+(17, 'Hard top complet - Defender 130', 9850, 1, 'img/boutique/product/thump/photo16.png', 'Un ensemble esthétique, dans la ligne du véhicule, compact, ouvrant sur l''intérieur en option, literie relevable, aménagement intérieur, chauffage, réserve d''eau, isolation, etc...', 'toit'),
+(18, 'Portage - Defender 90/110', 2758, 1, 'img/boutique/product/thump/photo17.png', 'Panneau de remplissage, toit, coté fixe, panneau de fermeture avant et porte arrière (avec système fermeture type ridelle basse Defender, joint, charnière)', 'portage');
 
 --
 -- Index pour les tables exportées
@@ -164,6 +223,12 @@ CREATE TABLE `produit` (
 -- Index pour la table `admin`
 --
 ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `categ`
+--
+ALTER TABLE `categ`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -200,6 +265,11 @@ ALTER TABLE `produit`
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT pour la table `categ`
+--
+ALTER TABLE `categ`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+--
 -- AUTO_INCREMENT pour la table `commande`
 --
 ALTER TABLE `commande`
@@ -218,7 +288,7 @@ ALTER TABLE `membre`
 -- AUTO_INCREMENT pour la table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
