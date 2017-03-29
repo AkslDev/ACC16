@@ -12,7 +12,7 @@ use `acc16`;
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 29 Mars 2017 à 04:16
+-- Généré le :  Mer 29 Mars 2017 à 04:32
 -- Version du serveur :  10.1.16-MariaDB
 -- Version de PHP :  7.0.9
 
@@ -70,6 +70,7 @@ CREATE TABLE `categ` (
 --
 
 INSERT INTO `categ` (`id`, `nom`, `nom_btn`) VALUES
+(0, 'All', 'all'),
 (1, 'Préparations', 'btn_prepa'),
 (2, 'Console - Tableau de bord', 'btn_console'),
 (3, 'Mobilier - Aménagement - Cellule |', 'btn_mob'),
@@ -268,7 +269,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT pour la table `categ`
 --
 ALTER TABLE `categ`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT pour la table `commande`
 --
@@ -292,3 +293,4 @@ ALTER TABLE `produit`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
