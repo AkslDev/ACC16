@@ -26,16 +26,29 @@
 		<div class="drop">
 			<a href="#"  id="nav-connect" class="nav_connect fdgris blanc">
 				<i class="material-icons">perm_identity</i>
-				Mon Compte<br>
-				<span>Se Connecter</span>	
-			</a>
-			<div class="fdgris" id="drop-connect" style="display: none;">
-				<ul>	
-					<li class="drop-brdr"><a class="blanc" href="connexion.php">Connexion</a></li>
-					<li class="drop-brdr"><a class="blanc" href="inscription.php">Inscription</a></li>
-					<li><a class="blanc">Déconnexion</a></li>					
-			</ul>
-			</div>			
+				<?php if(isset($_SESSION['user']["token"])) {
+					echo "Mr ".$_SESSION['user']["nom"] . "<br>Mon Compte";
+				?>
+				<br>
+				</a>
+				<div class="fdgris" id="drop-connect" style="display: none;">
+					<ul>	
+						<li><a href="content_php/deconnexion.php" class="blanc">Déconnexion</a></li>					
+					</ul>
+				</div>	
+				<?php
+				}else{
+					echo "Mon compte <br><span>Se Connecter</span>	";
+					?>
+					<br>
+				</a>
+				<div class="fdgris" id="drop-connect" style="display: none;">
+					<ul>	
+						<li class="drop-brdr"><a class="blanc" href="connexion.php">Connexion</a></li>
+						<li class="drop-brdr"><a class="blanc" href="inscription.php">Inscription</a></li>
+					</ul>
+				</div>	
+					<?php } ?>		
 		</div>
 		<a href="panier.php" class="nav_panier fdgris blanc">
 			<i class="material-icons">shopping_cart</i>

@@ -1,3 +1,8 @@
+<?php session_start(); 
+      if(isset($_SESSION['user']["token"])) {
+        header('Location: index.php');
+      }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 	<?php require("content_php/head.php") ?>

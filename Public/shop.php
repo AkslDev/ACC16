@@ -125,13 +125,16 @@
 		  			</a>
 		  		</div>
 			</div>
-			<div id="view-product" class="view-product large-9" style="display: none;" >
+			<?php
+			if (isset($_GET['produit'])) {
+			?>
+			<div id="view-product" class="view-product large-9">
 				<div class="row">
 				<a href="#" id="close-product"><i class="material-icons">close</i></a>
 					<div class="large-4 title-product">
 						<p class="gris bold">Ensemble de 2 Barres de toit avec rail sur benne</p>
 					</div>
-					<div class="large-7 img-product">
+					<div class="large-6 img-product">
 						<img src="img/boutique/product/barre-de-toit.png" alt="Image-Produit">
 					</div>
 				</div>		
@@ -175,11 +178,17 @@
 					</a>
 				</div>	
 			</div>
+			<?php }; ?>
 		</div>
 	</section>
 	<!-- FIN DE LA SECTION -->
 	<?php require('content_php/footer_shop.php'); ?>
 	<?php require('content_php/script.php'); ?>
+	<?php
+		if (isset($_GET['produit'])) {
+			echo "<script>$('.shop-left li').removeClass('shop-left-active'); $('#list-product').hide();</script>";
+		};
+	?>
 </body>
 </html>
 </html>

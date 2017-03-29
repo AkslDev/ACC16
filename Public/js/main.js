@@ -24,7 +24,7 @@
 		$('#view-product').css("display","block");
 	});
 	// Fermer le produit de la Boutique
-	$('#close-product').on('click', function(){
+	$('#close-product, ul li').on('click', function(){
 		$('#view-product').css("display","none");
 		$('#list-product').css("display","block");
 	})

@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php session_start(); 
+      if(isset($_SESSION['user']["token"])) {
+        
+      }else{
+        header('Location: connexion.php');
+      }
+?><!DOCTYPE html>
 <html lang="fr">
 	<?php require("content_php/head.php") ?>
 <body>
