@@ -271,79 +271,77 @@ if (!isset($_SESSION['infos_user']['token'])) {
 		  	<section class="commandes" id="commandes" style="display: none;">
 		  		<h3>Commandes (<span id="counters"></span>)</h3>
 		  		<table class="bordered highlight centered">
-		        		<thead>
-		          				<tr>
-		          				    	<th data-field="id">N° Commande</th>
-		          				    	<th data-field="date">Date</th>
-		          				    	<th data-field="products">Produits</th>
-                                            <th data-field="payment">Moyens de paiement</th>
-		          				    	<th data-field="status">Status</th>
-                                            <th data-field="token">N° Tracking</th>
-		          				    	<th data-field="action">Actions</th>
-		          				</tr>
-		       		</thead>
-		        		<tbody class="alls_commandes">
-		        			<tr class="commande">      
-		          				<td class="commande_id">302</td>
-		          				<td class="commande_date">07/02/2017</td>
-                                      	<td class="commande_produit">Poignée P12FD45</td>
-                                       <td class="commande_tracking">0V8DZ323O983</td>
-		          				<td class="commande_status">
-                            			<div class="input-field col s12">
-	                                			<select>
-	                                 			     <option value="none" disabled>Status de la commande :</option>
-	                                 			     <option value="0">En attente de probation...</option>
-	                                 			     <option value="1">Commande validé, en attente de paiement...</option>
-	                                 			     <option value="2">Paiement validé, envoi de la commande en cours...</option>
-	                                 			     <option value="3">Paiment reçu, colis reçu...</option>
-	                                 			</select>
-                            			</div>
-                          			</td>
-		          				<td class="commande_paiement">Paypal</td>
-          						<td>
-          						  	<a href="#" class="view_command">
-          						  		<i class="material-icons">remove_red_eye</i>
-          						  	</a>
-  		          					<a href="#" class="delete">
-          						  		<i class="material-icons">delete</i>
-          						  	</a>
-          						</td>
-		          			</tr>
-		        		</tbody>
-		      	</table>
-		     		<div class="view-command" id="view-command" style="display: none;">
-		      		<a href="#" class="close_card" id="close_card">
-      					<i class="material-icons">close</i>
-      				</a>
-      				<div class="command-card">
+			        		<thead>
+			          			<tr>
+			          				<th data-field="id">N° Commande</th>
+			          				<th data-field="date">Date</th>
+			          				<th data-field="products">Produits</th>
+	                                            			<th data-field="payment">Moyens de paiement</th>
+			          				<th data-field="status">Status</th>
+	                                            			<th data-field="token">N° Tracking</th>
+			          				<th data-field="action">Actions</th>
+			          			</tr>
+			       		</thead>
+			        		<tbody class="alls_commandes">
+			        			<tr class="commande">      
+			          				<td class="commande_id">302</td>
+			          				<td class="commande_date">07/02/2017</td>
+	                                      			<td class="commande_produit">Poignée P12FD45</td>
+	                                       			<td class="commande_tracking">0V8DZ323O983</td>
+			          				<td class="commande_status">
+	                            					<div class="input-field col s12">
+		                                					<select>
+		                                 				     		<option value="none" disabled>Status de la commande :</option>
+		                                 				     		<option value="0">En attente de probation...</option>
+		                                 				     		<option value="1">Commande validé, en attente de paiement...</option>
+		                                 			     			<option value="2">Paiement validé, envoi de la commande en cours...</option>
+		                                 			     			<option value="3">Paiment reçu, colis reçu...</option>
+		                                 					</select>
+	                            					</div>
+	                          				</td>
+			          				<td class="commande_paiement">Paypal</td>
+	          						<td>
+	          						  	<a href="#" class="view_link-command">
+	          						  		<i class="material-icons">remove_red_eye</i>
+	          						  	</a>
+	  		          					<a href="#" class="delete">
+	          						  		<i class="material-icons">delete</i>
+	          						  	</a>
+	          						</td>
+			          			</tr>
+			        		</tbody>
+		      		</table>
+			     	<div class="command-viewer" id="command-viewer" style="display: none;">
+			      		<a href="#" class="close_card" id="close_card">
+	      					<i class="material-icons">close</i>
+	      				</a>
+	      				<div class="command-card">
 						<h4 class="card_name" id="card_name">Commande n°<span>302</span></h4>
 						<table class="bordered highlight centered">
-		        				<thead>
-		          					<tr>
-		          					    	<th data-field="products">Produits</th>
-		          					</tr>
-		       		 		</thead>
-		        				<tbody>
-		          					<tr>
-		            					<td>Poignée P12FD45</td>
-		          					</tr>
-                          				<tr>
-                           				 	<td>Poignée P12FD45</td>
-                          				</tr>
-                          				<tr>
-                           				 	<td>Poignée P12FD45</td>
-                          				</tr>
-                          				<tr>
-                           				 	<td>Poignée P12FD45</td>
-                          				</tr>
-                          				<tr>
-                           				 	<td>Poignée P12FD45</td>
-                          				</tr>
-		        				</tbody>
-		      			</table>
-      				</div>
-		      	</div>
-		  	</section>
+			        				<thead>
+			          					<tr>
+			          						<th data-field="lastname">Nom</th>
+			          						<th data-field="firstname">Prénom</th>
+			          						<th data-field="adress">Adresse</th>
+			          						<th data-field="products">Produits</th>
+			          						<th data-field="status">Etat de la commande</th>
+			          						<th data-field="paiement">Moyen de paiement</th>
+			          					</tr>
+			       		 		</thead>
+			        				<tbody>
+			          					<tr>
+			          						<td>coquin</td>
+			          						<td>Axel</td>
+			          						<td>40 Rue Lavoisier 95330</td>
+			          						<td>Poignée P12FD45</td>
+			          						<td>Validé</td>
+			          						<td>CB</td>
+			          					</tr>
+			        				</tbody>
+			      			</table>
+	      				</div>
+				</div>
+			</section>
 		  	<section class="users" id="users" style="display: none;">
 		  		<h3>Utilisateurs (<span id="counter"></span>)</h3>
 		  		<table class="bordered highlight centered">

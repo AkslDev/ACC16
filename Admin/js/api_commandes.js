@@ -48,7 +48,11 @@ function gestions_commandes() {
 							$list_card.append(div);
 							counts++;
 							$('#counters').text(counts);
+							
 					}
+					$('.view_link-command').on('click', function(){
+						$('.command-viewer').css('display','block');
+					});
 					under_works = true;
 					$('select').material_select();
 				});

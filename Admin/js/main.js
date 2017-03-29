@@ -7,6 +7,7 @@
 		$('#photo_add').css('display','none');
 		$('#product_add').css('display','none');
 		$('#product_edit').css('display', 'none');
+		$('#command-viewer').css('display', 'none');
 	}
 
 	$(document).ready(function(){
@@ -20,7 +21,7 @@
 			    gestions_photos();
 			    break;
 			  case "produits":
-			    // gestions_produits();
+			    gestions_produits();
 			    break;
 			  case "commandes":
 			    // gestions_commandes();
@@ -117,12 +118,9 @@
 			});
 
 	// Section Commandes 
-		// Voir la photo
-			$('.view_command').on('click', function(){
-				// alert('test');
-				$('#view-command').css('display', 'block')
-			});
-				
+		// Voir la command
+		
+			
 	// Modifier/Supprimer
 	$('.edit_product').on('click', function(){
 		$('#product_edit').css('display', 'block');
